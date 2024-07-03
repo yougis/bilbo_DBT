@@ -1,0 +1,1477 @@
+[0m08:46:09.459242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF71E0DD30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF71746C90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF71744C20>]}
+
+
+============================== 08:46:09.459242 | 706750d8-6ba5-4145-8869-4aa3f180be8a ==============================
+[0m08:46:09.459242 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:46:09.459242 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\Stagiaire\\dbt_bilbo\\logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt seed', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m08:46:09.634210 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '706750d8-6ba5-4145-8869-4aa3f180be8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF72002C00>]}
+[0m08:46:09.688665 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '706750d8-6ba5-4145-8869-4aa3f180be8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF720029F0>]}
+[0m08:46:09.688665 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m08:46:09.698741 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m08:46:09.891103 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:46:09.891103 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:46:09.942017 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '706750d8-6ba5-4145-8869-4aa3f180be8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF722CF830>]}
+[0m08:46:10.071732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '706750d8-6ba5-4145-8869-4aa3f180be8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF734FE4E0>]}
+[0m08:46:10.071732 [info ] [MainThread]: Found 2 models, 4 data tests, 8 analyses, 1 seed, 415 macros
+[0m08:46:10.071732 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '706750d8-6ba5-4145-8869-4aa3f180be8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF71ECB5C0>]}
+[0m08:46:10.076845 [info ] [MainThread]: 
+[0m08:46:10.078636 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m08:46:10.078636 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m08:46:10.474759 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m08:46:10.474759 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m08:46:10.474759 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:46:10.516340 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.0 seconds
+[0m08:46:10.522352 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m08:46:10.526880 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m08:46:10.526880 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:46:10.532911 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m08:46:10.532911 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:46:10.557846 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m08:46:10.563391 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:46:10.563391 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m08:46:10.598417 [debug] [ThreadPool]: SQL status: SELECT 110 in 0.0 seconds
+[0m08:46:10.598417 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m08:46:10.604453 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m08:46:10.625619 [debug] [MainThread]: Using postgres connection "master"
+[0m08:46:10.625619 [debug] [MainThread]: On master: BEGIN
+[0m08:46:10.625619 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:46:10.659723 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:46:10.659723 [debug] [MainThread]: Using postgres connection "master"
+[0m08:46:10.659723 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m08:46:11.317112 [debug] [MainThread]: SQL status: SELECT 942 in 1.0 seconds
+[0m08:46:11.338270 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '706750d8-6ba5-4145-8869-4aa3f180be8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF6FAF4200>]}
+[0m08:46:11.338270 [debug] [MainThread]: On master: ROLLBACK
+[0m08:46:11.338270 [debug] [MainThread]: Using postgres connection "master"
+[0m08:46:11.338270 [debug] [MainThread]: On master: BEGIN
+[0m08:46:11.338270 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:46:11.338270 [debug] [MainThread]: On master: COMMIT
+[0m08:46:11.347804 [debug] [MainThread]: Using postgres connection "master"
+[0m08:46:11.347804 [debug] [MainThread]: On master: COMMIT
+[0m08:46:11.348847 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:46:11.348847 [debug] [MainThread]: On master: Close
+[0m08:46:11.348847 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:46:11.348847 [info ] [MainThread]: 
+[0m08:46:11.359412 [debug] [Thread-1 (]: Began running node seed.dbt_bilbo.raw_payments
+[0m08:46:11.359412 [info ] [Thread-1 (]: 1 of 1 START seed file processing.raw_payments ................................. [RUN]
+[0m08:46:11.359412 [debug] [Thread-1 (]: Acquiring new postgres connection 'seed.dbt_bilbo.raw_payments'
+[0m08:46:11.359412 [debug] [Thread-1 (]: Began compiling node seed.dbt_bilbo.raw_payments
+[0m08:46:11.368618 [debug] [Thread-1 (]: Began executing node seed.dbt_bilbo.raw_payments
+[0m08:46:11.402400 [debug] [Thread-1 (]: Using postgres connection "seed.dbt_bilbo.raw_payments"
+[0m08:46:11.403151 [debug] [Thread-1 (]: On seed.dbt_bilbo.raw_payments: BEGIN
+[0m08:46:11.403151 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m08:46:11.425635 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m08:46:11.425635 [debug] [Thread-1 (]: Using postgres connection "seed.dbt_bilbo.raw_payments"
+[0m08:46:11.426634 [debug] [Thread-1 (]: On seed.dbt_bilbo.raw_payments: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "seed.dbt_bilbo.raw_payments"} */
+
+    create table "oeil_traitement"."processing"."raw_payments" ("id" integer,"order_id" integer,"payment_method" text,"amount" integer)
+  
+[0m08:46:11.653308 [debug] [Thread-1 (]: SQL status: CREATE TABLE in 0.0 seconds
+[0m08:46:11.731457 [debug] [Thread-1 (]: Using postgres connection "seed.dbt_bilbo.raw_payments"
+[0m08:46:11.731457 [debug] [Thread-1 (]: On seed.dbt_bilbo.raw_payments: 
+          insert into "oeil_traitement"."processing"."raw_payments" ("id", "order_id", "payment_method", "amount") values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(...
+[0m08:46:11.735963 [debug] [Thread-1 (]: SQL status: INSERT 0 113 in 0.0 seconds
+[0m08:46:11.741968 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.dbt_bilbo.raw_payments"
+[0m08:46:11.763077 [debug] [Thread-1 (]: On seed.dbt_bilbo.raw_payments: COMMIT
+[0m08:46:11.764277 [debug] [Thread-1 (]: Using postgres connection "seed.dbt_bilbo.raw_payments"
+[0m08:46:11.765305 [debug] [Thread-1 (]: On seed.dbt_bilbo.raw_payments: COMMIT
+[0m08:46:11.774877 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m08:46:11.775877 [debug] [Thread-1 (]: On seed.dbt_bilbo.raw_payments: Close
+[0m08:46:11.777871 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '706750d8-6ba5-4145-8869-4aa3f180be8a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF6FA6BFE0>]}
+[0m08:46:11.778909 [info ] [Thread-1 (]: 1 of 1 OK loaded seed file processing.raw_payments ............................. [[32mINSERT 113[0m in 0.42s]
+[0m08:46:11.778909 [debug] [Thread-1 (]: Finished running node seed.dbt_bilbo.raw_payments
+[0m08:46:11.778909 [debug] [MainThread]: Using postgres connection "master"
+[0m08:46:11.778909 [debug] [MainThread]: On master: BEGIN
+[0m08:46:11.778909 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:46:11.807227 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:46:11.808695 [debug] [MainThread]: On master: COMMIT
+[0m08:46:11.808695 [debug] [MainThread]: Using postgres connection "master"
+[0m08:46:11.808695 [debug] [MainThread]: On master: COMMIT
+[0m08:46:11.808695 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:46:11.812856 [debug] [MainThread]: On master: Close
+[0m08:46:11.814438 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:46:11.814438 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m08:46:11.814438 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m08:46:11.814438 [debug] [MainThread]: Connection 'seed.dbt_bilbo.raw_payments' was properly closed.
+[0m08:46:11.814438 [info ] [MainThread]: 
+[0m08:46:11.814438 [info ] [MainThread]: Finished running 1 seed in 0 hours 0 minutes and 1.74 seconds (1.74s).
+[0m08:46:11.818952 [debug] [MainThread]: Command end result
+[0m08:46:11.854477 [info ] [MainThread]: 
+[0m08:46:11.854477 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:46:11.856508 [info ] [MainThread]: 
+[0m08:46:11.856508 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:46:11.856508 [debug] [MainThread]: Command `dbt seed` succeeded at 08:46:11.856508 after 2.52 seconds
+[0m08:46:11.856508 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF722FCDA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF71BF53D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AF71BF52B0>]}
+[0m08:46:11.861178 [debug] [MainThread]: Flushing usage events
+[0m08:47:08.240106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F985300E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9A6AE3C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9A2083B0>]}
+
+
+============================== 08:47:08.246113 | 00c486b9-f1f0-41db-a074-7a4fa149d3ab ==============================
+[0m08:47:08.246113 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:47:08.250624 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\Stagiaire\\dbt_bilbo\\logs', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt compile', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m08:47:08.426366 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '00c486b9-f1f0-41db-a074-7a4fa149d3ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F99F09C40>]}
+[0m08:47:08.481278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '00c486b9-f1f0-41db-a074-7a4fa149d3ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9B027710>]}
+[0m08:47:08.481278 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m08:47:08.492294 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m08:47:08.695169 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:47:08.695169 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:47:08.749622 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '00c486b9-f1f0-41db-a074-7a4fa149d3ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9AF58410>]}
+[0m08:47:08.863300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '00c486b9-f1f0-41db-a074-7a4fa149d3ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9C405B20>]}
+[0m08:47:08.863300 [info ] [MainThread]: Found 2 models, 4 data tests, 8 analyses, 1 seed, 415 macros
+[0m08:47:08.863300 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00c486b9-f1f0-41db-a074-7a4fa149d3ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9AFDDF70>]}
+[0m08:47:08.863300 [info ] [MainThread]: 
+[0m08:47:08.863300 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m08:47:08.873831 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m08:47:08.999210 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:47:08.999210 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m08:47:08.999210 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:47:09.030065 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m08:47:09.030065 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:47:09.030065 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m08:47:09.045841 [debug] [ThreadPool]: SQL status: SELECT 111 in 0.0 seconds
+[0m08:47:09.045841 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m08:47:09.050439 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m08:47:09.071521 [debug] [MainThread]: Using postgres connection "master"
+[0m08:47:09.071521 [debug] [MainThread]: On master: BEGIN
+[0m08:47:09.071521 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:47:09.092267 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:47:09.098871 [debug] [MainThread]: Using postgres connection "master"
+[0m08:47:09.098871 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m08:47:09.629031 [debug] [MainThread]: SQL status: SELECT 942 in 1.0 seconds
+[0m08:47:09.649208 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '00c486b9-f1f0-41db-a074-7a4fa149d3ab', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9B295160>]}
+[0m08:47:09.649208 [debug] [MainThread]: On master: ROLLBACK
+[0m08:47:09.657316 [debug] [MainThread]: On master: Close
+[0m08:47:09.657316 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:47:09.659325 [info ] [MainThread]: 
+[0m08:47:09.659325 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.mvue_TMF_acc_aveclibelle
+[0m08:47:09.659325 [debug] [Thread-1 (]: Acquiring new postgres connection 'analysis.dbt_bilbo.mvue_TMF_acc_aveclibelle'
+[0m08:47:09.659325 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.mvue_TMF_acc_aveclibelle
+[0m08:47:09.670743 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.mvue_TMF_acc_aveclibelle"
+[0m08:47:09.672523 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.mvue_TMF_acc_aveclibelle
+[0m08:47:09.673523 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.mvue_TMF_acc_aveclibelle
+[0m08:47:09.674519 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.mvue_TMF_acc_sanslibelle
+[0m08:47:09.674519 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.mvue_TMF_acc_aveclibelle, now analysis.dbt_bilbo.mvue_TMF_acc_sanslibelle)
+[0m08:47:09.675543 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.mvue_TMF_acc_sanslibelle
+[0m08:47:09.678125 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.mvue_TMF_acc_sanslibelle"
+[0m08:47:09.678125 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.mvue_TMF_acc_sanslibelle
+[0m08:47:09.680156 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.mvue_TMF_acc_sanslibelle
+[0m08:47:09.680156 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.mvue_TMF_distinct_annee
+[0m08:47:09.680156 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.mvue_TMF_acc_sanslibelle, now analysis.dbt_bilbo.mvue_TMF_distinct_annee)
+[0m08:47:09.680156 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.mvue_TMF_distinct_annee
+[0m08:47:09.683404 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.mvue_TMF_distinct_annee"
+[0m08:47:09.686637 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.mvue_TMF_distinct_annee
+[0m08:47:09.687637 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.mvue_TMF_distinct_annee
+[0m08:47:09.687637 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.requete_join
+[0m08:47:09.688635 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.mvue_TMF_distinct_annee, now analysis.dbt_bilbo.requete_join)
+[0m08:47:09.689631 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.requete_join
+[0m08:47:09.691024 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.requete_join"
+[0m08:47:09.691024 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.requete_join
+[0m08:47:09.691024 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.requete_join
+[0m08:47:09.691024 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.statistiques
+[0m08:47:09.691024 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.requete_join, now analysis.dbt_bilbo.statistiques)
+[0m08:47:09.691024 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.statistiques
+[0m08:47:09.699343 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.statistiques"
+[0m08:47:09.700368 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.statistiques
+[0m08:47:09.700880 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.statistiques
+[0m08:47:09.700880 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.stats_avancees_windows
+[0m08:47:09.700880 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.statistiques, now analysis.dbt_bilbo.stats_avancees_windows)
+[0m08:47:09.700880 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.stats_avancees_windows
+[0m08:47:09.704910 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.stats_avancees_windows"
+[0m08:47:09.704910 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.stats_avancees_windows
+[0m08:47:09.709452 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.stats_avancees_windows
+[0m08:47:09.709452 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.table_pivot_annee_classe
+[0m08:47:09.709452 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.stats_avancees_windows, now analysis.dbt_bilbo.table_pivot_annee_classe)
+[0m08:47:09.711190 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.table_pivot_annee_classe
+[0m08:47:09.711772 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.table_pivot_annee_classe"
+[0m08:47:09.711772 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.table_pivot_annee_classe
+[0m08:47:09.711772 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.table_pivot_annee_classe
+[0m08:47:09.711772 [debug] [Thread-1 (]: Began running node analysis.dbt_bilbo.table_statitics
+[0m08:47:09.711772 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.table_pivot_annee_classe, now analysis.dbt_bilbo.table_statitics)
+[0m08:47:09.711772 [debug] [Thread-1 (]: Began compiling node analysis.dbt_bilbo.table_statitics
+[0m08:47:09.719584 [debug] [Thread-1 (]: Writing injected SQL for node "analysis.dbt_bilbo.table_statitics"
+[0m08:47:09.721558 [debug] [Thread-1 (]: Began executing node analysis.dbt_bilbo.table_statitics
+[0m08:47:09.721558 [debug] [Thread-1 (]: Finished running node analysis.dbt_bilbo.table_statitics
+[0m08:47:09.722582 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.my_first_dbt_model
+[0m08:47:09.723552 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly analysis.dbt_bilbo.table_statitics, now model.dbt_bilbo.my_first_dbt_model)
+[0m08:47:09.723552 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.my_first_dbt_model
+[0m08:47:09.726303 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.my_first_dbt_model"
+[0m08:47:09.727886 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.my_first_dbt_model
+[0m08:47:09.728886 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.my_first_dbt_model
+[0m08:47:09.729883 [debug] [Thread-1 (]: Began running node seed.dbt_bilbo.raw_payments
+[0m08:47:09.729883 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_bilbo.my_first_dbt_model, now seed.dbt_bilbo.raw_payments)
+[0m08:47:09.730881 [debug] [Thread-1 (]: Began compiling node seed.dbt_bilbo.raw_payments
+[0m08:47:09.731878 [debug] [Thread-1 (]: Began executing node seed.dbt_bilbo.raw_payments
+[0m08:47:09.732919 [debug] [Thread-1 (]: Finished running node seed.dbt_bilbo.raw_payments
+[0m08:47:09.732919 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.my_second_dbt_model
+[0m08:47:09.732919 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.dbt_bilbo.raw_payments, now model.dbt_bilbo.my_second_dbt_model)
+[0m08:47:09.732919 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.my_second_dbt_model
+[0m08:47:09.732919 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.my_second_dbt_model"
+[0m08:47:09.732919 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.my_second_dbt_model
+[0m08:47:09.732919 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.my_second_dbt_model
+[0m08:47:09.732919 [debug] [Thread-1 (]: Began running node test.dbt_bilbo.not_null_my_first_dbt_model_id.5fb22c2710
+[0m08:47:09.740445 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.dbt_bilbo.my_second_dbt_model, now test.dbt_bilbo.not_null_my_first_dbt_model_id.5fb22c2710)
+[0m08:47:09.740445 [debug] [Thread-1 (]: Began compiling node test.dbt_bilbo.not_null_my_first_dbt_model_id.5fb22c2710
+[0m08:47:09.750975 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_bilbo.not_null_my_first_dbt_model_id.5fb22c2710"
+[0m08:47:09.752484 [debug] [Thread-1 (]: Began executing node test.dbt_bilbo.not_null_my_first_dbt_model_id.5fb22c2710
+[0m08:47:09.752484 [debug] [Thread-1 (]: Finished running node test.dbt_bilbo.not_null_my_first_dbt_model_id.5fb22c2710
+[0m08:47:09.752484 [debug] [Thread-1 (]: Began running node test.dbt_bilbo.unique_my_first_dbt_model_id.16e066b321
+[0m08:47:09.752484 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_bilbo.not_null_my_first_dbt_model_id.5fb22c2710, now test.dbt_bilbo.unique_my_first_dbt_model_id.16e066b321)
+[0m08:47:09.752484 [debug] [Thread-1 (]: Began compiling node test.dbt_bilbo.unique_my_first_dbt_model_id.16e066b321
+[0m08:47:09.761494 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_bilbo.unique_my_first_dbt_model_id.16e066b321"
+[0m08:47:09.761494 [debug] [Thread-1 (]: Began executing node test.dbt_bilbo.unique_my_first_dbt_model_id.16e066b321
+[0m08:47:09.763004 [debug] [Thread-1 (]: Finished running node test.dbt_bilbo.unique_my_first_dbt_model_id.16e066b321
+[0m08:47:09.763004 [debug] [Thread-1 (]: Began running node test.dbt_bilbo.not_null_my_second_dbt_model_id.151b76d778
+[0m08:47:09.763004 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_bilbo.unique_my_first_dbt_model_id.16e066b321, now test.dbt_bilbo.not_null_my_second_dbt_model_id.151b76d778)
+[0m08:47:09.763004 [debug] [Thread-1 (]: Began compiling node test.dbt_bilbo.not_null_my_second_dbt_model_id.151b76d778
+[0m08:47:09.763004 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_bilbo.not_null_my_second_dbt_model_id.151b76d778"
+[0m08:47:09.763004 [debug] [Thread-1 (]: Began executing node test.dbt_bilbo.not_null_my_second_dbt_model_id.151b76d778
+[0m08:47:09.763004 [debug] [Thread-1 (]: Finished running node test.dbt_bilbo.not_null_my_second_dbt_model_id.151b76d778
+[0m08:47:09.763004 [debug] [Thread-1 (]: Began running node test.dbt_bilbo.unique_my_second_dbt_model_id.57a0f8c493
+[0m08:47:09.763004 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.dbt_bilbo.not_null_my_second_dbt_model_id.151b76d778, now test.dbt_bilbo.unique_my_second_dbt_model_id.57a0f8c493)
+[0m08:47:09.772021 [debug] [Thread-1 (]: Began compiling node test.dbt_bilbo.unique_my_second_dbt_model_id.57a0f8c493
+[0m08:47:09.773532 [debug] [Thread-1 (]: Writing injected SQL for node "test.dbt_bilbo.unique_my_second_dbt_model_id.57a0f8c493"
+[0m08:47:09.773532 [debug] [Thread-1 (]: Began executing node test.dbt_bilbo.unique_my_second_dbt_model_id.57a0f8c493
+[0m08:47:09.773532 [debug] [Thread-1 (]: Finished running node test.dbt_bilbo.unique_my_second_dbt_model_id.57a0f8c493
+[0m08:47:09.773532 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:47:09.773532 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m08:47:09.773532 [debug] [MainThread]: Connection 'test.dbt_bilbo.unique_my_second_dbt_model_id.57a0f8c493' was properly closed.
+[0m08:47:09.782545 [debug] [MainThread]: Command end result
+[0m08:47:09.805104 [debug] [MainThread]: Command `dbt compile` succeeded at 08:47:09.805104 after 1.69 seconds
+[0m08:47:09.805104 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9AA64380>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F971FB2F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027F9AADC8F0>]}
+[0m08:47:09.805104 [debug] [MainThread]: Flushing usage events
+[0m08:51:44.266050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C19A27F80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1BFAF170>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1BFAF770>]}
+
+
+============================== 08:51:44.276603 | 74c7c9ca-07e8-4b33-a1aa-7f046b72d870 ==============================
+[0m08:51:44.276603 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:51:44.276603 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'log_path': 'C:\\Users\\Stagiaire\\dbt_bilbo\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m08:51:44.453838 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '74c7c9ca-07e8-4b33-a1aa-7f046b72d870', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C16243770>]}
+[0m08:51:44.505737 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '74c7c9ca-07e8-4b33-a1aa-7f046b72d870', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1C1260F0>]}
+[0m08:51:44.505737 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m08:51:44.517274 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m08:51:44.694399 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:51:44.694399 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:51:44.704490 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_bilbo.example
+[0m08:51:44.748518 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '74c7c9ca-07e8-4b33-a1aa-7f046b72d870', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1C69D6D0>]}
+[0m08:51:44.857546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '74c7c9ca-07e8-4b33-a1aa-7f046b72d870', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1C8550D0>]}
+[0m08:51:44.857546 [info ] [MainThread]: Found 8 analyses, 1 seed, 1 model, 415 macros
+[0m08:51:44.857546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '74c7c9ca-07e8-4b33-a1aa-7f046b72d870', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1C6CD160>]}
+[0m08:51:44.857546 [info ] [MainThread]: 
+[0m08:51:44.857546 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m08:51:44.865066 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m08:51:44.992422 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m08:51:44.992422 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m08:51:44.992422 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:51:45.021183 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.0 seconds
+[0m08:51:45.021183 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m08:51:45.023705 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m08:51:45.031751 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:51:45.033760 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m08:51:45.033760 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:51:45.053666 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m08:51:45.054685 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:51:45.054685 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m08:51:45.064728 [debug] [ThreadPool]: SQL status: SELECT 111 in 0.0 seconds
+[0m08:51:45.064728 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m08:51:45.073329 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m08:51:45.093947 [debug] [MainThread]: Using postgres connection "master"
+[0m08:51:45.093947 [debug] [MainThread]: On master: BEGIN
+[0m08:51:45.095485 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:51:45.115620 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:51:45.115620 [debug] [MainThread]: Using postgres connection "master"
+[0m08:51:45.115620 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m08:51:45.658719 [debug] [MainThread]: SQL status: SELECT 942 in 1.0 seconds
+[0m08:51:45.668791 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '74c7c9ca-07e8-4b33-a1aa-7f046b72d870', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1C854F20>]}
+[0m08:51:45.676327 [debug] [MainThread]: On master: ROLLBACK
+[0m08:51:45.676327 [debug] [MainThread]: Using postgres connection "master"
+[0m08:51:45.676327 [debug] [MainThread]: On master: BEGIN
+[0m08:51:45.678865 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:51:45.678865 [debug] [MainThread]: On master: COMMIT
+[0m08:51:45.678865 [debug] [MainThread]: Using postgres connection "master"
+[0m08:51:45.678865 [debug] [MainThread]: On master: COMMIT
+[0m08:51:45.678865 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:51:45.678865 [debug] [MainThread]: On master: Close
+[0m08:51:45.678865 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:51:45.678865 [info ] [MainThread]: 
+[0m08:51:45.688887 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:51:45.688887 [info ] [Thread-1 (]: 1 of 1 START sql view model processing.order_payment_method_amounts ............ [RUN]
+[0m08:51:45.688887 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.order_payment_method_amounts'
+[0m08:51:45.692008 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.order_payment_method_amounts
+[0m08:51:45.699010 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:51:45.700026 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.order_payment_method_amounts
+[0m08:51:45.742632 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:51:45.743602 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:51:45.744599 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: BEGIN
+[0m08:51:45.744599 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m08:51:45.771090 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m08:51:45.780097 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:51:45.780097 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+
+  create view "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp"
+    
+    
+  as (
+    select
+order_id,
+
+sum(case when payment_method = 'bank_transfer' then amount end) as bank_transfer_amount,
+
+sum(case when payment_method = 'credit_card' then amount end) as credit_card_amount,
+
+sum(case when payment_method = 'gift_card' then amount end) as gift_card_amount,
+
+sum(amount) as total_amount
+from "oeil_traitement"."processing"."raw_payments"
+group by 1
+  );
+[0m08:51:45.828598 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m08:51:45.831607 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:51:45.831607 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+alter table "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp" rename to "order_payment_method_amounts"
+[0m08:51:45.842224 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m08:51:45.858744 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:51:45.858744 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:51:45.858744 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:51:45.879209 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m08:51:45.883715 [debug] [Thread-1 (]: Applying DROP to: "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup"
+[0m08:51:45.894227 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:51:45.894227 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+drop view if exists "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup" cascade
+[0m08:51:45.894227 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m08:51:45.894227 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: Close
+[0m08:51:45.900288 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '74c7c9ca-07e8-4b33-a1aa-7f046b72d870', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1DFFF5C0>]}
+[0m08:51:45.900288 [info ] [Thread-1 (]: 1 of 1 OK created sql view model processing.order_payment_method_amounts ....... [[32mCREATE VIEW[0m in 0.21s]
+[0m08:51:45.900288 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:51:45.904319 [debug] [MainThread]: Using postgres connection "master"
+[0m08:51:45.904319 [debug] [MainThread]: On master: BEGIN
+[0m08:51:45.904319 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:51:45.928658 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:51:45.928658 [debug] [MainThread]: On master: COMMIT
+[0m08:51:45.929691 [debug] [MainThread]: Using postgres connection "master"
+[0m08:51:45.929691 [debug] [MainThread]: On master: COMMIT
+[0m08:51:45.931205 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:51:45.931205 [debug] [MainThread]: On master: Close
+[0m08:51:45.931205 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:51:45.931205 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m08:51:45.931205 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m08:51:45.931205 [debug] [MainThread]: Connection 'model.dbt_bilbo.order_payment_method_amounts' was properly closed.
+[0m08:51:45.935791 [info ] [MainThread]: 
+[0m08:51:45.936489 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.07 seconds (1.07s).
+[0m08:51:45.936489 [debug] [MainThread]: Command end result
+[0m08:51:45.966535 [info ] [MainThread]: 
+[0m08:51:45.971529 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:51:45.972489 [info ] [MainThread]: 
+[0m08:51:45.973490 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:51:45.975509 [debug] [MainThread]: Command `dbt run` succeeded at 08:51:45.975509 after 1.83 seconds
+[0m08:51:45.975509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C193F7560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1DED9580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020C1B2555B0>]}
+[0m08:51:45.976508 [debug] [MainThread]: Flushing usage events
+[0m08:52:47.734503 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FD177050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FD174F20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FD177B30>]}
+
+
+============================== 08:52:47.737055 | f287a945-d398-4da5-a16b-776e6659d598 ==============================
+[0m08:52:47.737055 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:52:47.737055 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\Stagiaire\\dbt_bilbo\\logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m08:52:47.908301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f287a945-d398-4da5-a16b-776e6659d598', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FD83D730>]}
+[0m08:52:47.959063 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f287a945-d398-4da5-a16b-776e6659d598', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FD1EB830>]}
+[0m08:52:47.969161 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m08:52:47.969161 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m08:52:48.156297 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:52:48.160828 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:52:48.160828 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_bilbo.example
+[0m08:52:48.206928 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f287a945-d398-4da5-a16b-776e6659d598', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FDCAD8B0>]}
+[0m08:52:48.302970 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f287a945-d398-4da5-a16b-776e6659d598', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FDD91D00>]}
+[0m08:52:48.302970 [info ] [MainThread]: Found 8 analyses, 1 seed, 1 model, 415 macros
+[0m08:52:48.302970 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f287a945-d398-4da5-a16b-776e6659d598', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FEEFB7A0>]}
+[0m08:52:48.302970 [info ] [MainThread]: 
+[0m08:52:48.302970 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m08:52:48.302970 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m08:52:48.433513 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m08:52:48.433513 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m08:52:48.433513 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:52:48.460422 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.0 seconds
+[0m08:52:48.460422 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m08:52:48.463959 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m08:52:48.470504 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:52:48.470504 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m08:52:48.474046 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:52:48.495146 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m08:52:48.495146 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:52:48.495146 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m08:52:48.505677 [debug] [ThreadPool]: SQL status: SELECT 112 in 0.0 seconds
+[0m08:52:48.505677 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m08:52:48.515778 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m08:52:48.536335 [debug] [MainThread]: Using postgres connection "master"
+[0m08:52:48.536862 [debug] [MainThread]: On master: BEGIN
+[0m08:52:48.536862 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:52:48.557148 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:52:48.557148 [debug] [MainThread]: Using postgres connection "master"
+[0m08:52:48.557148 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m08:52:49.089164 [debug] [MainThread]: SQL status: SELECT 943 in 1.0 seconds
+[0m08:52:49.109718 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f287a945-d398-4da5-a16b-776e6659d598', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FF4495B0>]}
+[0m08:52:49.109718 [debug] [MainThread]: On master: ROLLBACK
+[0m08:52:49.109718 [debug] [MainThread]: Using postgres connection "master"
+[0m08:52:49.114745 [debug] [MainThread]: On master: BEGIN
+[0m08:52:49.114745 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:52:49.114745 [debug] [MainThread]: On master: COMMIT
+[0m08:52:49.114745 [debug] [MainThread]: Using postgres connection "master"
+[0m08:52:49.114745 [debug] [MainThread]: On master: COMMIT
+[0m08:52:49.120358 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:52:49.120358 [debug] [MainThread]: On master: Close
+[0m08:52:49.120358 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:52:49.120358 [info ] [MainThread]: 
+[0m08:52:49.124921 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:52:49.124921 [info ] [Thread-1 (]: 1 of 1 START sql view model processing.order_payment_method_amounts ............ [RUN]
+[0m08:52:49.124921 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.order_payment_method_amounts'
+[0m08:52:49.128276 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.order_payment_method_amounts
+[0m08:52:49.136133 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.136133 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.order_payment_method_amounts
+[0m08:52:49.180852 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.181864 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.182848 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: BEGIN
+[0m08:52:49.182848 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m08:52:49.198669 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m08:52:49.198669 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.198669 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+
+  create view "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp"
+    
+    
+  as (
+    
+
+select
+order_id,
+
+sum(case when payment_method = 'bank_transfer' then amount end) as bank_transfer_amount,
+
+sum(case when payment_method = 'credit_card' then amount end) as credit_card_amount,
+
+sum(case when payment_method = 'gift_card' then amount end) as gift_card_amount,
+
+sum(amount) as total_amount
+from "oeil_traitement"."processing"."raw_payments"
+group by 1
+  );
+[0m08:52:49.208879 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m08:52:49.219397 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.219397 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+alter table "oeil_traitement"."processing"."order_payment_method_amounts" rename to "order_payment_method_amounts__dbt_backup"
+[0m08:52:49.219397 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m08:52:49.228413 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.228413 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+alter table "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp" rename to "order_payment_method_amounts"
+[0m08:52:49.229923 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m08:52:49.240441 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:52:49.240441 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.240441 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:52:49.261187 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m08:52:49.261187 [debug] [Thread-1 (]: Applying DROP to: "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup"
+[0m08:52:49.271715 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:52:49.271715 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+drop view if exists "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup" cascade
+[0m08:52:49.313335 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m08:52:49.313335 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: Close
+[0m08:52:49.313335 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'f287a945-d398-4da5-a16b-776e6659d598', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FD175400>]}
+[0m08:52:49.313335 [info ] [Thread-1 (]: 1 of 1 OK created sql view model processing.order_payment_method_amounts ....... [[32mCREATE VIEW[0m in 0.19s]
+[0m08:52:49.313335 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:52:49.313335 [debug] [MainThread]: Using postgres connection "master"
+[0m08:52:49.313335 [debug] [MainThread]: On master: BEGIN
+[0m08:52:49.313335 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:52:49.345089 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:52:49.345089 [debug] [MainThread]: On master: COMMIT
+[0m08:52:49.345089 [debug] [MainThread]: Using postgres connection "master"
+[0m08:52:49.345089 [debug] [MainThread]: On master: COMMIT
+[0m08:52:49.348154 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:52:49.348597 [debug] [MainThread]: On master: Close
+[0m08:52:49.348597 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:52:49.348597 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m08:52:49.348597 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m08:52:49.348597 [debug] [MainThread]: Connection 'model.dbt_bilbo.order_payment_method_amounts' was properly closed.
+[0m08:52:49.348597 [info ] [MainThread]: 
+[0m08:52:49.348597 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.05 seconds (1.05s).
+[0m08:52:49.348597 [debug] [MainThread]: Command end result
+[0m08:52:49.382028 [info ] [MainThread]: 
+[0m08:52:49.384255 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:52:49.386014 [info ] [MainThread]: 
+[0m08:52:49.386014 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:52:49.388026 [debug] [MainThread]: Command `dbt run` succeeded at 08:52:49.388026 after 1.77 seconds
+[0m08:52:49.388817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FDA2ADE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FDD64F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000240FC8B4080>]}
+[0m08:52:49.388817 [debug] [MainThread]: Flushing usage events
+[0m08:54:29.164990 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30C63FF80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30EBC5A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30EBC4500>]}
+
+
+============================== 08:54:29.164990 | 190a2712-4ce0-4138-a831-c1458b81efb7 ==============================
+[0m08:54:29.164990 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:54:29.164990 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\Stagiaire\\dbt_bilbo\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m08:54:29.340097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '190a2712-4ce0-4138-a831-c1458b81efb7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30F522ED0>]}
+[0m08:54:29.392407 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '190a2712-4ce0-4138-a831-c1458b81efb7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30F1379E0>]}
+[0m08:54:29.392407 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m08:54:29.402463 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m08:54:29.577317 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:54:29.577317 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:54:29.577317 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_bilbo.example
+[0m08:54:29.623678 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '190a2712-4ce0-4138-a831-c1458b81efb7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30F6BC080>]}
+[0m08:54:29.727047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '190a2712-4ce0-4138-a831-c1458b81efb7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C31091BB60>]}
+[0m08:54:29.727047 [info ] [MainThread]: Found 8 analyses, 1 seed, 1 model, 415 macros
+[0m08:54:29.727047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '190a2712-4ce0-4138-a831-c1458b81efb7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C31084BFE0>]}
+[0m08:54:29.727047 [info ] [MainThread]: 
+[0m08:54:29.731153 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m08:54:29.731153 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m08:54:29.858990 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m08:54:29.858990 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m08:54:29.858990 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:54:29.884958 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.0 seconds
+[0m08:54:29.884958 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m08:54:29.892772 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m08:54:29.900395 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:54:29.900395 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m08:54:29.900395 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:54:29.925995 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m08:54:29.925995 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:54:29.925995 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m08:54:29.941967 [debug] [ThreadPool]: SQL status: SELECT 112 in 0.0 seconds
+[0m08:54:29.943989 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m08:54:29.946855 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m08:54:29.967358 [debug] [MainThread]: Using postgres connection "master"
+[0m08:54:29.967358 [debug] [MainThread]: On master: BEGIN
+[0m08:54:29.967358 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:54:29.988264 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:54:29.988264 [debug] [MainThread]: Using postgres connection "master"
+[0m08:54:29.988264 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m08:54:30.520950 [debug] [MainThread]: SQL status: SELECT 943 in 1.0 seconds
+[0m08:54:30.535025 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '190a2712-4ce0-4138-a831-c1458b81efb7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C310E68BC0>]}
+[0m08:54:30.535025 [debug] [MainThread]: On master: ROLLBACK
+[0m08:54:30.541121 [debug] [MainThread]: Using postgres connection "master"
+[0m08:54:30.541121 [debug] [MainThread]: On master: BEGIN
+[0m08:54:30.541121 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:54:30.541121 [debug] [MainThread]: On master: COMMIT
+[0m08:54:30.545127 [debug] [MainThread]: Using postgres connection "master"
+[0m08:54:30.545127 [debug] [MainThread]: On master: COMMIT
+[0m08:54:30.545127 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:54:30.545127 [debug] [MainThread]: On master: Close
+[0m08:54:30.545127 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:54:30.545127 [info ] [MainThread]: 
+[0m08:54:30.551640 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:54:30.551640 [info ] [Thread-1 (]: 1 of 1 START sql view model processing.order_payment_method_amounts ............ [RUN]
+[0m08:54:30.551640 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.order_payment_method_amounts'
+[0m08:54:30.555676 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.order_payment_method_amounts
+[0m08:54:30.564487 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.566795 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.order_payment_method_amounts
+[0m08:54:30.604915 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.605724 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.606749 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: BEGIN
+[0m08:54:30.606749 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m08:54:30.628230 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m08:54:30.628230 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.628230 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+
+  create view "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp"
+    
+    
+  as (
+    
+
+select
+order_id,
+
+sum(case when payment_method = 'bank_transfer' then amount end) as bank_transfer_amount
+,
+
+sum(case when payment_method = 'credit_card' then amount end) as credit_card_amount
+,
+
+sum(case when payment_method = 'gift_card' then amount end) as gift_card_amount
+
+
+from "oeil_traitement"."processing"."raw_payments"
+group by 1
+  );
+[0m08:54:30.640476 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m08:54:30.648333 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.648333 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+alter table "oeil_traitement"."processing"."order_payment_method_amounts" rename to "order_payment_method_amounts__dbt_backup"
+[0m08:54:30.650840 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m08:54:30.654835 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.654835 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+alter table "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp" rename to "order_payment_method_amounts"
+[0m08:54:30.654835 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m08:54:30.675588 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:54:30.675588 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.675588 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:54:30.696084 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m08:54:30.703188 [debug] [Thread-1 (]: Applying DROP to: "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup"
+[0m08:54:30.703188 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:54:30.711721 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+drop view if exists "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup" cascade
+[0m08:54:30.724169 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m08:54:30.732888 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: Close
+[0m08:54:30.733481 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '190a2712-4ce0-4138-a831-c1458b81efb7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30CEBBDD0>]}
+[0m08:54:30.733481 [info ] [Thread-1 (]: 1 of 1 OK created sql view model processing.order_payment_method_amounts ....... [[32mCREATE VIEW[0m in 0.18s]
+[0m08:54:30.733481 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:54:30.738387 [debug] [MainThread]: Using postgres connection "master"
+[0m08:54:30.738387 [debug] [MainThread]: On master: BEGIN
+[0m08:54:30.738387 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:54:30.758119 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:54:30.759117 [debug] [MainThread]: On master: COMMIT
+[0m08:54:30.759117 [debug] [MainThread]: Using postgres connection "master"
+[0m08:54:30.760082 [debug] [MainThread]: On master: COMMIT
+[0m08:54:30.760082 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:54:30.760082 [debug] [MainThread]: On master: Close
+[0m08:54:30.760082 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:54:30.760082 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m08:54:30.760082 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m08:54:30.760082 [debug] [MainThread]: Connection 'model.dbt_bilbo.order_payment_method_amounts' was properly closed.
+[0m08:54:30.765103 [info ] [MainThread]: 
+[0m08:54:30.766102 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.03 seconds (1.03s).
+[0m08:54:30.766735 [debug] [MainThread]: Command end result
+[0m08:54:30.794871 [info ] [MainThread]: 
+[0m08:54:30.796272 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:54:30.797266 [info ] [MainThread]: 
+[0m08:54:30.798078 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:54:30.800073 [debug] [MainThread]: Command `dbt run` succeeded at 08:54:30.800073 after 1.75 seconds
+[0m08:54:30.801071 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30E4C6C00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30F1FD1F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C30F115940>]}
+[0m08:54:30.801071 [debug] [MainThread]: Flushing usage events
+[0m08:55:14.418624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239ECA77F80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239EEE743E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239EEE778C0>]}
+
+
+============================== 08:55:14.428160 | 52ed8b39-a6c7-4672-bc84-a9268c0f8dd6 ==============================
+[0m08:55:14.428160 [info ] [MainThread]: Running with dbt=1.8.0
+[0m08:55:14.429192 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'C:\\Users\\Stagiaire\\dbt_bilbo\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m08:55:14.598396 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '52ed8b39-a6c7-4672-bc84-a9268c0f8dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239EF843680>]}
+[0m08:55:14.651857 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '52ed8b39-a6c7-4672-bc84-a9268c0f8dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239EE737D70>]}
+[0m08:55:14.651857 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m08:55:14.661932 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m08:55:14.832520 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m08:55:14.832520 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m08:55:14.843090 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_bilbo.example
+[0m08:55:14.883987 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '52ed8b39-a6c7-4672-bc84-a9268c0f8dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239EF93E030>]}
+[0m08:55:14.978563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '52ed8b39-a6c7-4672-bc84-a9268c0f8dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239F09D2210>]}
+[0m08:55:14.978563 [info ] [MainThread]: Found 8 analyses, 1 seed, 1 model, 415 macros
+[0m08:55:14.978563 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '52ed8b39-a6c7-4672-bc84-a9268c0f8dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239F0A27E60>]}
+[0m08:55:14.978563 [info ] [MainThread]: 
+[0m08:55:14.978563 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m08:55:14.987113 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m08:55:15.110800 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m08:55:15.110800 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m08:55:15.110800 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:55:15.136647 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.0 seconds
+[0m08:55:15.136647 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m08:55:15.136647 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m08:55:15.146722 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:55:15.146722 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m08:55:15.146722 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:55:15.167066 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m08:55:15.167066 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m08:55:15.167066 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m08:55:15.186312 [debug] [ThreadPool]: SQL status: SELECT 112 in 0.0 seconds
+[0m08:55:15.187828 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m08:55:15.187828 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m08:55:15.208938 [debug] [MainThread]: Using postgres connection "master"
+[0m08:55:15.208938 [debug] [MainThread]: On master: BEGIN
+[0m08:55:15.208938 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:55:15.236567 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:55:15.236567 [debug] [MainThread]: Using postgres connection "master"
+[0m08:55:15.236567 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m08:55:15.769454 [debug] [MainThread]: SQL status: SELECT 943 in 1.0 seconds
+[0m08:55:15.794278 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '52ed8b39-a6c7-4672-bc84-a9268c0f8dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239F0A78980>]}
+[0m08:55:15.796296 [debug] [MainThread]: On master: ROLLBACK
+[0m08:55:15.796296 [debug] [MainThread]: Using postgres connection "master"
+[0m08:55:15.796296 [debug] [MainThread]: On master: BEGIN
+[0m08:55:15.796296 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:55:15.796296 [debug] [MainThread]: On master: COMMIT
+[0m08:55:15.796296 [debug] [MainThread]: Using postgres connection "master"
+[0m08:55:15.796296 [debug] [MainThread]: On master: COMMIT
+[0m08:55:15.796296 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:55:15.796296 [debug] [MainThread]: On master: Close
+[0m08:55:15.804834 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m08:55:15.804834 [info ] [MainThread]: 
+[0m08:55:15.806857 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:55:15.806857 [info ] [Thread-1 (]: 1 of 1 START sql view model processing.order_payment_method_amounts ............ [RUN]
+[0m08:55:15.806857 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.order_payment_method_amounts'
+[0m08:55:15.806857 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.order_payment_method_amounts
+[0m08:55:15.821491 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.821491 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.order_payment_method_amounts
+[0m08:55:15.862878 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.863854 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.864853 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: BEGIN
+[0m08:55:15.864853 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m08:55:15.881220 [debug] [Thread-1 (]: SQL status: BEGIN in 0.0 seconds
+[0m08:55:15.881220 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.881220 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+
+  create view "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp"
+    
+    
+  as (
+    select
+order_id,
+sum(case when payment_method = 'bank_transfer' then amount end) as bank_transfer_amount,
+sum(case when payment_method = 'credit_card' then amount end) as credit_card_amount,
+sum(case when payment_method = 'gift_card' then amount end) as gift_card_amount
+from "oeil_traitement"."processing"."raw_payments"
+group by 1
+  );
+[0m08:55:15.899349 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.0 seconds
+[0m08:55:15.906889 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.909419 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+alter table "oeil_traitement"."processing"."order_payment_method_amounts" rename to "order_payment_method_amounts__dbt_backup"
+[0m08:55:15.909419 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m08:55:15.909419 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.909419 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+alter table "oeil_traitement"."processing"."order_payment_method_amounts__dbt_tmp" rename to "order_payment_method_amounts"
+[0m08:55:15.917516 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.0 seconds
+[0m08:55:15.929643 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:55:15.929643 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.929643 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: COMMIT
+[0m08:55:15.950076 [debug] [Thread-1 (]: SQL status: COMMIT in 0.0 seconds
+[0m08:55:15.960153 [debug] [Thread-1 (]: Applying DROP to: "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup"
+[0m08:55:15.960153 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.order_payment_method_amounts"
+[0m08:55:15.969195 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.order_payment_method_amounts"} */
+drop view if exists "oeil_traitement"."processing"."order_payment_method_amounts__dbt_backup" cascade
+[0m08:55:15.990640 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.0 seconds
+[0m08:55:15.990640 [debug] [Thread-1 (]: On model.dbt_bilbo.order_payment_method_amounts: Close
+[0m08:55:16.000152 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '52ed8b39-a6c7-4672-bc84-a9268c0f8dd6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239ED19BFE0>]}
+[0m08:55:16.001191 [info ] [Thread-1 (]: 1 of 1 OK created sql view model processing.order_payment_method_amounts ....... [[32mCREATE VIEW[0m in 0.18s]
+[0m08:55:16.001191 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.order_payment_method_amounts
+[0m08:55:16.001191 [debug] [MainThread]: Using postgres connection "master"
+[0m08:55:16.001191 [debug] [MainThread]: On master: BEGIN
+[0m08:55:16.001191 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m08:55:16.021448 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m08:55:16.022505 [debug] [MainThread]: On master: COMMIT
+[0m08:55:16.022505 [debug] [MainThread]: Using postgres connection "master"
+[0m08:55:16.027346 [debug] [MainThread]: On master: COMMIT
+[0m08:55:16.028119 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m08:55:16.028119 [debug] [MainThread]: On master: Close
+[0m08:55:16.030643 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m08:55:16.030643 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m08:55:16.030643 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m08:55:16.030643 [debug] [MainThread]: Connection 'model.dbt_bilbo.order_payment_method_amounts' was properly closed.
+[0m08:55:16.030643 [info ] [MainThread]: 
+[0m08:55:16.032653 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 1.05 seconds (1.05s).
+[0m08:55:16.034654 [debug] [MainThread]: Command end result
+[0m08:55:16.061749 [info ] [MainThread]: 
+[0m08:55:16.062949 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m08:55:16.064400 [info ] [MainThread]: 
+[0m08:55:16.064400 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m08:55:16.064400 [debug] [MainThread]: Command `dbt run` succeeded at 08:55:16.064400 after 1.76 seconds
+[0m08:55:16.064400 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239F0FC83B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239EF7A0B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000239EF3215E0>]}
+[0m08:55:16.064400 [debug] [MainThread]: Flushing usage events
+[0m09:09:35.103301 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B00DDD30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B0D4F920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B117F320>]}
+
+
+============================== 09:09:35.113845 | 43a791b5-934c-4e06-9d10-5411580a8b59 ==============================
+[0m09:09:35.113845 [info ] [MainThread]: Running with dbt=1.8.0
+[0m09:09:35.113845 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'C:\\Users\\Stagiaire\\dbt_bilbo\\logs', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:09:35.302324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '43a791b5-934c-4e06-9d10-5411580a8b59', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B1295BE0>]}
+[0m09:09:35.364248 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '43a791b5-934c-4e06-9d10-5411580a8b59', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B119E0C0>]}
+[0m09:09:35.364248 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m09:09:35.374960 [debug] [MainThread]: checksum: dbb12d416fdb55e3665e4828703bbedf40c5c90ed7ca6ff39bbbfb29b12b0a92, vars: {}, profile: , target: , version: 1.8.0
+[0m09:09:35.569716 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:09:35.569716 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:09:35.569716 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.dbt_bilbo.example
+[0m09:09:35.622884 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '43a791b5-934c-4e06-9d10-5411580a8b59', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B11F1610>]}
+[0m09:09:35.720746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '43a791b5-934c-4e06-9d10-5411580a8b59', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B24B15B0>]}
+[0m09:09:35.720746 [info ] [MainThread]: Found 8 analyses, 1 seed, 1 model, 417 macros
+[0m09:09:35.720746 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '43a791b5-934c-4e06-9d10-5411580a8b59', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B2504680>]}
+[0m09:09:35.720746 [info ] [MainThread]: 
+[0m09:09:35.727793 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m09:09:35.727793 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m09:09:35.855392 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m09:09:35.855392 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m09:09:35.855392 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:09:35.886158 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.0 seconds
+[0m09:09:35.886158 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m09:09:35.886158 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m09:09:35.896251 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m09:09:35.896251 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m09:09:35.896251 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:09:35.916512 [debug] [ThreadPool]: SQL status: BEGIN in 0.0 seconds
+[0m09:09:35.916512 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m09:09:35.926522 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m09:09:35.937582 [debug] [ThreadPool]: SQL status: SELECT 108 in 0.0 seconds
+[0m09:09:35.937582 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m09:09:35.937582 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m09:09:35.957744 [debug] [MainThread]: Using postgres connection "master"
+[0m09:09:35.957744 [debug] [MainThread]: On master: BEGIN
+[0m09:09:35.957744 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:09:35.979418 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m09:09:35.979418 [debug] [MainThread]: Using postgres connection "master"
+[0m09:09:35.988949 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.0", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m09:09:36.524941 [debug] [MainThread]: SQL status: SELECT 943 in 1.0 seconds
+[0m09:09:36.535969 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '43a791b5-934c-4e06-9d10-5411580a8b59', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B1347D70>]}
+[0m09:09:36.535969 [debug] [MainThread]: On master: ROLLBACK
+[0m09:09:36.535969 [debug] [MainThread]: Using postgres connection "master"
+[0m09:09:36.535969 [debug] [MainThread]: On master: BEGIN
+[0m09:09:36.546497 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m09:09:36.546497 [debug] [MainThread]: On master: COMMIT
+[0m09:09:36.546497 [debug] [MainThread]: Using postgres connection "master"
+[0m09:09:36.546497 [debug] [MainThread]: On master: COMMIT
+[0m09:09:36.546497 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m09:09:36.546497 [debug] [MainThread]: On master: Close
+[0m09:09:36.546497 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:09:36.546497 [info ] [MainThread]: 
+[0m09:09:36.557541 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.order_payment_method_amounts
+[0m09:09:36.557541 [info ] [Thread-1 (]: 1 of 1 START sql view model processing.order_payment_method_amounts ............ [RUN]
+[0m09:09:36.557541 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.order_payment_method_amounts'
+[0m09:09:36.562620 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.order_payment_method_amounts
+[0m09:09:36.604274 [debug] [Thread-1 (]: Compilation Error in model order_payment_method_amounts (models\order_payment_method_amounts.sql)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m09:09:36.605505 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '43a791b5-934c-4e06-9d10-5411580a8b59', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B08C50D0>]}
+[0m09:09:36.608057 [error] [Thread-1 (]: 1 of 1 ERROR creating sql view model processing.order_payment_method_amounts ... [[31mERROR[0m in 0.05s]
+[0m09:09:36.608057 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.order_payment_method_amounts
+[0m09:09:36.611984 [debug] [MainThread]: Using postgres connection "master"
+[0m09:09:36.611984 [debug] [MainThread]: On master: BEGIN
+[0m09:09:36.613009 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:09:36.633928 [debug] [MainThread]: SQL status: BEGIN in 0.0 seconds
+[0m09:09:36.633928 [debug] [MainThread]: On master: COMMIT
+[0m09:09:36.635938 [debug] [MainThread]: Using postgres connection "master"
+[0m09:09:36.635938 [debug] [MainThread]: On master: COMMIT
+[0m09:09:36.635938 [debug] [MainThread]: SQL status: COMMIT in 0.0 seconds
+[0m09:09:36.635938 [debug] [MainThread]: On master: Close
+[0m09:09:36.635938 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:09:36.639285 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m09:09:36.639797 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m09:09:36.640789 [debug] [MainThread]: Connection 'model.dbt_bilbo.order_payment_method_amounts' was properly closed.
+[0m09:09:36.640886 [info ] [MainThread]: 
+[0m09:09:36.640886 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.91 seconds (0.91s).
+[0m09:09:36.640886 [debug] [MainThread]: Command end result
+[0m09:09:36.671190 [info ] [MainThread]: 
+[0m09:09:36.671190 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m09:09:36.675748 [info ] [MainThread]: 
+[0m09:09:36.675975 [error] [MainThread]:   Compilation Error in model order_payment_method_amounts (models\order_payment_method_amounts.sql)
+  'dbt_utils' is undefined. This can happen when calling a macro that does not exist. Check for typos and/or install package dependencies with "dbt deps".
+[0m09:09:36.677494 [info ] [MainThread]: 
+[0m09:09:36.677494 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m09:09:36.680735 [debug] [MainThread]: Command `dbt run` failed at 09:09:36.680735 after 1.70 seconds
+[0m09:09:36.681733 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B0D4F920>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B10AA810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000216B0EFD8B0>]}
+[0m09:09:36.682744 [debug] [MainThread]: Flushing usage events
