@@ -1,7 +1,7 @@
 # Description du projet 
 Projet DBT pour l'automatisation de la transformation des tables et la préparation à leur valorisation.
 
-# Organisation et méthodlogie
+# Organisation et méthodologie
 
 1.	Xxx
 2.  Xxx
