@@ -1,5 +1,8 @@
+-- Requête pour joindre une table possédant un champs "id_spatial" avec la table "dim_spatial" 
+-- afin d'obtenir la géométrie du polygone
+
 SELECT 
-    d.*,  -- Sélectionne tous les champs de dim_spatial
+    d.*,
     t."Annee", 
     t.id_spatial, 
     t.sum_values

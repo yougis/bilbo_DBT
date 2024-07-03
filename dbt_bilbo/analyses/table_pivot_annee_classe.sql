@@ -1,3 +1,5 @@
+-- Requête pour générer une table pivot, nécessaire pour les cartes choroplèthes
+
 SELECT 
   id_spatial,
   SUM(values) FILTER (WHERE annee = 1990 AND classe = '1') AS "1990_c1",

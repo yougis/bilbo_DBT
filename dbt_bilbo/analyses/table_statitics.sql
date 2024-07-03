@@ -1,3 +1,5 @@
+-- Requête pour générer une table possédant l'ensemble des dimensions ("alldim") à partir d'une table de faits
+
 DROP TABLE IF EXISTS processing.dtm_alldim_TMF_v2022_degradation_h3_nc_6;
 
 CREATE TABLE processing.dtm_alldim_TMF_v2022_degradation_h3_nc_6 AS

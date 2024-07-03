@@ -1,3 +1,5 @@
+-- Requête pour obtenir des statistiques avancées sur les tables (sans thématique / sans dimension contextuelle)
+
 DROP TABLE IF EXISTS processing.dtm_stats_TMF_acc_v12022_h3_nc_6;
 
 CREATE TABLE processing.dtm_stats_TMF_acc_v12022_h3_nc_6 AS

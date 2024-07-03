@@ -1,6 +1,3 @@
--- Création d'une vue matérialisée qui groupe les valeurs selon l'année, l'id_spatial 
--- et la classe.
-
 -- Calculer la somme dans une sous-requête
 WITH summed_values AS (
     SELECT 
