@@ -1,8 +1,9 @@
 -- Requête pour obtenir des statistiques avancées sur les tables (sans thématique / sans dimension contextuelle)
 
-DROP TABLE IF EXISTS processing.dtm_stats_TMF_acc_v12022_h3_nc_6;
+--DROP TABLE IF EXISTS processing.faits_GFC_gain_foncier;
 
-CREATE TABLE processing.dtm_stats_TMF_acc_v12022_h3_nc_6 AS
+--CREATE TABLE processing.faits_GFC_gain_foncier AS
+
 
 WITH dtm_alldim AS (
     SELECT 
@@ -10,10 +11,10 @@ WITH dtm_alldim AS (
         id_spatial,
         upper_libelle,
         level,
-        ROUND(CAST(SUM(values) AS numeric), 2) AS ha,
+        ROUND(CAST(SUM(ROUND(CAST(ST_Area(geometry) / 10000 AS numeric), 2)) AS numeric), 2) AS ha,
         classe
     FROM 
-        processing."faits_TMF_acc_v12022_h3_nc_6"
+        processing."faits_GFC_gain_APP"
     GROUP BY 
         annee,
         id_spatial,

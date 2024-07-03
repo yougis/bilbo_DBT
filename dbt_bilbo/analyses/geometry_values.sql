@@ -3,19 +3,11 @@
 
 --CREATE EXTENSION IF NOT EXISTS postgis;
 
-CREATE TABLE processing."faits_GFC_gain_APP_superficie" AS
+--CREATE TABLE processing."faits_GFC_gain_APP_superficie" AS
 SELECT 
-    annee,
     id_spatial,
     upper_libelle,
-    level,
-    libelle,
-    nature,
-    milieu,
-    classe, 
-    ST_Area(geometry) AS superficie,
+    ROUND(CAST(ST_Area(geometry) / 10000 AS numeric), 2) AS superficie,
     geometry
-
 FROM 
-    processing."faits_GFC_gain_APP";
-
+    carto."dim_spatial";
