@@ -28,7 +28,12 @@ Projet DBT pour l'automatisation de la transformation des tables et la préparat
 
 # Comment utiliser ?
 
+Pour utiliser ce projet, veuillez suivre les étapes ci-dessous :
+
+_Étape 1 : Installer les dépendances_  
+_Étape 2 : Configurer les fichiers de connexion_  
+_Étape 3 : Exécuter les commandes dbt_
 
 # Dernière mise à jour
-Mercredi 3 juillet 2024 - 14h27
-Par : Eliott
+<ins>Mercredi 3 juillet 2024 - 14h27</ins>  
+Par : _Eliott_
