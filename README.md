@@ -5,7 +5,7 @@ Projet DBT pour l'automatisation de la transformation des tables et la préparat
 
 # Organisation et méthodologie
 
-*_1. analyses_* : permet de réaliser des requêtes SQL exploratoires, souvent temporaires, pour mieux comprendre (vient avant le Models). Cette partie n’intervient pas dans le pipeline de production.
+**1. analyses** : permet de réaliser des requêtes SQL exploratoires, souvent temporaires, pour mieux comprendre (vient avant le Models). Cette partie n’intervient pas dans le pipeline de production.
 
 **2. logs** : contient des informations sur l’exécution des commandes
 
