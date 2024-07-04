@@ -2,7 +2,7 @@
 -- afin d'obtenir la géométrie du polygone
 
 SELECT 
-    d.*,
+    d.geometry,
     t."Annee", 
     t.id_spatial, 
     t.sum_values
@@ -23,6 +23,9 @@ JOIN (
 ) t
 ON 
     d.id_spatial = t.id_spatial
+
+WHERE
+    t.id_spatial = '1'
 
 ORDER BY
     t."Annee", 
