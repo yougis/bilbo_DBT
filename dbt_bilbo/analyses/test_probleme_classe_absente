@@ -1,0 +1,19 @@
+SELECT
+    id_spatial,
+    CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM information_schema.columns
+            WHERE table_name = 'faits_GFC_lossyear_h3_nc_6_APP'
+              AND column_name = 'nature'
+        ) THEN nature
+        WHEN EXISTS (
+            SELECT 1
+            FROM information_schema.columns
+            WHERE table_name = 'faits_GFC_lossyear_h3_nc_6_APP'
+              AND column_name = 'proprio_na'
+        ) THEN proprio_na
+        ELSE NULL
+    END AS classe
+FROM
+    processing."faits_GFC_lossyear_h3_nc_6_APP";
