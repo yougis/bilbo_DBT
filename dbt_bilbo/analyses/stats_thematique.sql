@@ -1,6 +1,6 @@
 --CREATE EXTENSION IF NOT EXISTS postgis;
 
---CREATE TABLE processing."faits_GFC_lossyear_h3_nc_6_APP" AS
+--CREATE TABLE processing."dtm_alldim_GFC_lossyear_h3_nc_6_APP" AS
 
 SELECT 
     CASE
@@ -13,7 +13,7 @@ SELECT
     f.libelle,
     f.nature,
     f.milieu,
-    SUM(ROUND(CAST(ST_Area(geometry) / 10000 AS numeric), 2)) AS sum_values
+    SUM(ROUND(CAST(ST_Area(geometry) / 10000 AS numeric), 2)) AS ha
 
 FROM 
     processing."faits_GFC_lossyear_h3_nc_6_APP" f
