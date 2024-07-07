@@ -1,0 +1,20 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: faits_TMF_v2022_def_h3_nc_6_rch_miniere
+        columns:
+          - name: id
+          - name: date_insti
+          - name: level
+          - name: groupe
+          - name: annee
+          - name: id_spatial
+          - name: upper_libelle
+          - name: titre_mini
+          - name: numero
+          - name: geometry
+          - name: id_split
+          - name: metadata_id

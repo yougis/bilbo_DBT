@@ -1,0 +1,19 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: faits_GFC_lossyear_h3_nc_6_APP
+        columns:
+          - name: id
+          - name: annee
+          - name: nature
+          - name: milieu
+          - name: upper_libelle
+          - name: id_spatial
+          - name: level
+          - name: libelle
+          - name: geometry
+          - name: id_split
+          - name: metadata_id

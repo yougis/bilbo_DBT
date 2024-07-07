@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: faits_TMF_acc_foncier
+        columns:
+          - name: nic
+          - name: annee
+          - name: upper_libelle
+          - name: level
+          - name: classe
+          - name: id_spatial
+          - name: proprio_na
+          - name: geometry
+          - name: id_split
+          - name: metadata_id

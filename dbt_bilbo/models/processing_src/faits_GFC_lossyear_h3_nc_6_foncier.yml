@@ -1,0 +1,17 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: faits_GFC_lossyear_h3_nc_6_foncier
+        columns:
+          - name: nic
+          - name: level
+          - name: upper_libelle
+          - name: annee
+          - name: proprio_na
+          - name: id_spatial
+          - name: geometry
+          - name: id_split
+          - name: metadata_id

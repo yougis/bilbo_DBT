@@ -1,0 +1,19 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: faits_GFC_gain_h3_nc_6
+        columns:
+          - name: hex_id
+          - name: classe
+          - name: Annee
+          - name: id_split
+          - name: id_spatial
+          - name: level
+          - name: upper_libelle
+          - name: geometry
+          - name: values
+          - name: metadata_id
+          - name: id_indicateur
