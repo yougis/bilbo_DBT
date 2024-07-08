@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: processing  # nom du schéma
+    tables:
+      - name: faits_TMF_acc_v12022_h3_nc_6  # nom de la table
+        description: "Description de la table des faits TMF"
+        columns:
+          - name: annee
+            description: "L'année des données"
+          - name: id_spatial
+            description: "L'identifiant spatial"
+          - name: upper_libelle
+            description: "Le libellé en majuscule"
+          - name: level
+            description: "Le niveau"
+          - name: classe
+            description: "La classe"
+          - name: values
+            description: "Les valeurs"

@@ -1,6 +1,6 @@
 version: 2
 sources:
-  - name: oeil_traitement-processing
+  - name: data_processing
     database: oeil_traitement
     schema: processing
     tables: 
