@@ -1,11 +1,13 @@
 -- Création d'une vue matérialisée qui groupe les valeurs selon l'année, l'id_spatial, 
 -- le libellé et la classe.
 
-CREATE MATERIALIZED VIEW surfor.mvue_TMF_acc_aveclibelle AS
+--CREATE MATERIALIZED VIEW surfor.mvue_TMF_acc_aveclibelle AS
 
 SELECT 
     annee, 
-    id_spatial, 
+    id_spatial,
+    upper_libelle,
+    level,
     SUM(values) AS sum_values,
     classe
 FROM 
@@ -13,10 +15,12 @@ FROM
 GROUP BY 
     annee, 
     id_spatial,
-    libelle,
+    upper_libelle,
+    level,
     classe
 ORDER BY
     annee, 
     id_spatial,
-    libelle,
+    upper_libelle,
+    level,
     classe;

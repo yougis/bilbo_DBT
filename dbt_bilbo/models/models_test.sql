@@ -1,7 +1,26 @@
+{% set schema = 'surfor' %}
+{% set table_name = 'faits_TMF_annualChangeCollection_h3_nc_6' %}
 
-{% import "macros/macro_dtm_alldim_avec_classe.sql" as macros %}
+{{ macros_test(schema, table_name) }}
 
-{% set schema = 'processing' %}
-{% set table_name = 'faits_TMF_acc_v12022_h3_nc_6' %}
-
-{{ macros.macro_dtm_alldim_avec_classe(schema, table_name) }}
+SELECT
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe,
+    SUM(values) AS sum_values
+FROM
+    {{ source(schema, table_name) }}
+GROUP BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+ORDER BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe

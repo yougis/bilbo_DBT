@@ -5071,3 +5071,1779 @@ TypeError: no loader for this environment specified
 [0m08:50:39.098635 [debug] [MainThread]: Command `dbt run` failed at 08:50:39.098635 after 1.42 seconds
 [0m08:50:39.098635 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCDE02A550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCDE2F0B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCDCD36F50>]}
 [0m08:50:39.099630 [debug] [MainThread]: Flushing usage events
+[0m09:45:43.114741 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255606130D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002556065E150>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002556065CE90>]}
+
+
+============================== 09:45:43.130963 | 60f2be23-6c04-4bd9-8024-fe0e96ab18d5 ==============================
+[0m09:45:43.130963 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:45:43.130963 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt debug', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:45:43.196852 [info ] [MainThread]: dbt version: 1.8.3
+[0m09:45:43.196852 [info ] [MainThread]: python version: 3.11.9
+[0m09:45:43.196852 [info ] [MainThread]: python path: C:\Users\Stagiaire\Miniconda3\envs\dbt_311\python.exe
+[0m09:45:43.196852 [info ] [MainThread]: os info: Windows-10-10.0.19045-SP0
+[0m09:45:43.319727 [info ] [MainThread]: Using profiles dir at C:\Users\Stagiaire\.dbt
+[0m09:45:43.319727 [info ] [MainThread]: Using profiles.yml file at C:\Users\Stagiaire\.dbt\profiles.yml
+[0m09:45:43.319727 [info ] [MainThread]: Using dbt_project.yml file at D:\dbt_workspace\DBT\dbt_bilbo\dbt_project.yml
+[0m09:45:43.319727 [info ] [MainThread]: adapter type: postgres
+[0m09:45:43.319727 [info ] [MainThread]: adapter version: 1.8.2
+[0m09:45:43.405929 [info ] [MainThread]: Configuration:
+[0m09:45:43.405929 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m09:45:43.405929 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m09:45:43.405929 [info ] [MainThread]: Required dependencies:
+[0m09:45:43.405929 [debug] [MainThread]: Executing "git --help"
+[0m09:45:43.459073 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m09:45:43.459073 [debug] [MainThread]: STDERR: "b''"
+[0m09:45:43.464758 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m09:45:43.465763 [info ] [MainThread]: Connection:
+[0m09:45:43.465763 [info ] [MainThread]:   host: 172.20.12.13
+[0m09:45:43.466762 [info ] [MainThread]:   port: 5432
+[0m09:45:43.467789 [info ] [MainThread]:   user: dbt_bilbo
+[0m09:45:43.467789 [info ] [MainThread]:   database: oeil_traitement
+[0m09:45:43.468763 [info ] [MainThread]:   schema: processing
+[0m09:45:43.468763 [info ] [MainThread]:   connect_timeout: 10
+[0m09:45:43.469788 [info ] [MainThread]:   role: None
+[0m09:45:43.470760 [info ] [MainThread]:   search_path: None
+[0m09:45:43.471588 [info ] [MainThread]:   keepalives_idle: 0
+[0m09:45:43.472181 [info ] [MainThread]:   sslmode: None
+[0m09:45:43.473185 [info ] [MainThread]:   sslcert: None
+[0m09:45:43.474183 [info ] [MainThread]:   sslkey: None
+[0m09:45:43.475183 [info ] [MainThread]:   sslrootcert: None
+[0m09:45:43.475183 [info ] [MainThread]:   application_name: dbt
+[0m09:45:43.476203 [info ] [MainThread]:   retries: 1
+[0m09:45:43.477198 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m09:45:43.478463 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m09:45:43.919986 [debug] [MainThread]: Using postgres connection "debug"
+[0m09:45:43.919986 [debug] [MainThread]: On debug: select 1 as id
+[0m09:45:43.919986 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:45:43.967877 [debug] [MainThread]: SQL status: SELECT 1 in 0.048 seconds
+[0m09:45:43.967877 [debug] [MainThread]: On debug: Close
+[0m09:45:43.967877 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m09:45:43.967877 [info ] [MainThread]: [32mAll checks passed![0m
+[0m09:45:43.983456 [debug] [MainThread]: Command `dbt debug` succeeded at 09:45:43.967877 after 0.95 seconds
+[0m09:45:43.983456 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m09:45:43.983456 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000255607C61D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025559F29C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025559F2A810>]}
+[0m09:45:43.983456 [debug] [MainThread]: Flushing usage events
+[0m09:50:17.758712 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C56D410>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C56D490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C56F110>]}
+
+
+============================== 09:50:17.765591 | 3dac1f6a-28bf-4841-87a8-7f1d8a5d5e79 ==============================
+[0m09:50:17.765591 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:50:17.765591 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:50:17.987631 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3dac1f6a-28bf-4841-87a8-7f1d8a5d5e79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C56DC50>]}
+[0m09:50:18.043738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3dac1f6a-28bf-4841-87a8-7f1d8a5d5e79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D39831E90>]}
+[0m09:50:18.049721 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m09:50:18.059172 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m09:50:18.063625 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:50:18.065624 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3dac1f6a-28bf-4841-87a8-7f1d8a5d5e79', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C70DF90>]}
+[0m09:50:20.965168 [error] [MainThread]: Encountered an error:
+no loader for this environment specified
+[0m09:50:20.998520 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 320, in wrapper
+    ctx.obj["manifest"] = parse_manifest(
+                          ^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 1898, in parse_manifest
+    manifest = ManifestLoader.get_full_manifest(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 330, in get_full_manifest
+    manifest = loader.load()
+               ^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 435, in load
+    self.parse_project(
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 733, in parse_project
+    parser.parse_file(block)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 484, in parse_file
+    self.parse_node(file_block)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 445, in parse_node
+    self.render_update(node, config)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\models.py", line 348, in render_update
+    super().render_update(node, config)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 421, in render_update
+    context = self.render_with_context(node, config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 270, in render_with_context
+    get_rendered(parsed_node.raw_code, context, parsed_node, capture_macros=True)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\clients\jinja.py", line 146, in get_rendered
+    rendered = render_template(template, ctx, node)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt_common\clients\jinja.py", line 539, in render_template
+    return template.render(ctx)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt_common\clients\jinja.py", line 144, in render
+    return self.environment.handle_exception()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 1, in top-level template code
+TypeError: no loader for this environment specified
+
+[0m09:50:21.005844 [debug] [MainThread]: Command `dbt run` failed at 09:50:21.005844 after 3.34 seconds
+[0m09:50:21.007445 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C57A710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C815950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020D3C2FAF90>]}
+[0m09:50:21.008444 [debug] [MainThread]: Flushing usage events
+[0m09:54:59.906020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFB9E3E50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFBA2FF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFB7BB390>]}
+
+
+============================== 09:54:59.906020 | b688b0e1-6341-4db3-9a0d-a63e4bb6599e ==============================
+[0m09:54:59.906020 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:54:59.906020 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run -models models_test', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m09:55:00.100798 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b688b0e1-6341-4db3-9a0d-a63e4bb6599e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFBB4ED90>]}
+[0m09:55:00.163296 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b688b0e1-6341-4db3-9a0d-a63e4bb6599e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EF8CF5CD0>]}
+[0m09:55:00.163296 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m09:55:00.180147 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m09:55:00.181829 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:55:00.182352 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b688b0e1-6341-4db3-9a0d-a63e4bb6599e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFBB32B90>]}
+[0m09:55:01.192243 [error] [MainThread]: Encountered an error:
+no loader for this environment specified
+[0m09:55:01.209105 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 218, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 247, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 294, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\cli\requires.py", line 320, in wrapper
+    ctx.obj["manifest"] = parse_manifest(
+                          ^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 1898, in parse_manifest
+    manifest = ManifestLoader.get_full_manifest(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 330, in get_full_manifest
+    manifest = loader.load()
+               ^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 435, in load
+    self.parse_project(
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\manifest.py", line 733, in parse_project
+    parser.parse_file(block)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 484, in parse_file
+    self.parse_node(file_block)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 445, in parse_node
+    self.render_update(node, config)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\models.py", line 348, in render_update
+    super().render_update(node, config)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 421, in render_update
+    context = self.render_with_context(node, config)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\parser\base.py", line 270, in render_with_context
+    get_rendered(parsed_node.raw_code, context, parsed_node, capture_macros=True)
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt\clients\jinja.py", line 146, in get_rendered
+    rendered = render_template(template, ctx, node)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt_common\clients\jinja.py", line 539, in render_template
+    return template.render(ctx)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\dbt_common\clients\jinja.py", line 144, in render
+    return self.environment.handle_exception()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Stagiaire\Miniconda3\envs\dbt_311\Lib\site-packages\jinja2\environment.py", line 939, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "<template>", line 48, in top-level template code
+TypeError: no loader for this environment specified
+
+[0m09:55:01.217175 [debug] [MainThread]: Command `dbt run` failed at 09:55:01.217175 after 1.39 seconds
+[0m09:55:01.217175 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFB53EF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFBCF87D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000014EFB9E2B90>]}
+[0m09:55:01.217175 [debug] [MainThread]: Flushing usage events
+[0m09:55:47.000577 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9942A0BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C99406ADD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C994293990>]}
+
+
+============================== 09:55:47.000577 | b9b60d32-ef86-4cb0-b196-246657df54c5 ==============================
+[0m09:55:47.000577 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:55:47.016201 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run -models models_test', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:55:47.202711 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b9b60d32-ef86-4cb0-b196-246657df54c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C99439F1D0>]}
+[0m09:55:47.249615 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b9b60d32-ef86-4cb0-b196-246657df54c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9915B1ED0>]}
+[0m09:55:47.249615 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m09:55:47.265213 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m09:55:47.265213 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:55:47.265213 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'b9b60d32-ef86-4cb0-b196-246657df54c5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C9944CFED0>]}
+[0m09:55:48.754257 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_bilbo.faits_GFC_gain_APP' (models\faits_GFC_gain_APP.sql) depends on a source named 'oeil_traitement-processing.faits_GFC_gain_APP' which was not found
+[0m09:55:48.756246 [debug] [MainThread]: Command `dbt run` failed at 09:55:48.756246 after 1.84 seconds
+[0m09:55:48.756246 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C994299850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C994298190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C994299090>]}
+[0m09:55:48.756246 [debug] [MainThread]: Flushing usage events
+[0m09:56:23.744793 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B8188C3C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B8188C3350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B8188C36D0>]}
+
+
+============================== 09:56:23.760418 | 3efe9473-9144-4670-b56c-32507c597814 ==============================
+[0m09:56:23.760418 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:56:23.760418 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'version_check': 'True', 'debug': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run -models models_test', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m09:56:23.946439 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '3efe9473-9144-4670-b56c-32507c597814', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B818A74E10>]}
+[0m09:56:23.993313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '3efe9473-9144-4670-b56c-32507c597814', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B815BD1850>]}
+[0m09:56:23.993313 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m09:56:24.008940 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m09:56:24.008940 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:56:24.008940 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '3efe9473-9144-4670-b56c-32507c597814', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B81890BB10>]}
+[0m09:56:25.468418 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_bilbo.faits_GFC_gain_APP' (models\faits_GFC_gain_APP.sql) depends on a source named 'oeil_traitement-processing.faits_GFC_gain_APP' which was not found
+[0m09:56:25.468418 [debug] [MainThread]: Command `dbt run` failed at 09:56:25.468418 after 1.81 seconds
+[0m09:56:25.468418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B8188C29D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B81869AF50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B812264490>]}
+[0m09:56:25.468418 [debug] [MainThread]: Flushing usage events
+[0m09:56:54.522735 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C5153C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C5152D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C5153790>]}
+
+
+============================== 09:56:54.522735 | 2a4cb846-8a18-4dda-8b31-368ad2879096 ==============================
+[0m09:56:54.522735 [info ] [MainThread]: Running with dbt=1.8.3
+[0m09:56:54.522735 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'debug': 'False', 'warn_error': 'None', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run -models models_test', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m09:56:54.717973 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2a4cb846-8a18-4dda-8b31-368ad2879096', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C51D01D0>]}
+[0m09:56:54.780479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2a4cb846-8a18-4dda-8b31-368ad2879096', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C2471DD0>]}
+[0m09:56:54.780479 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m09:56:54.780479 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m09:56:54.780479 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:56:54.780479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2a4cb846-8a18-4dda-8b31-368ad2879096', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C519F910>]}
+[0m09:56:56.271261 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_bilbo.faits_GFC_gain_APP' (models\faits_GFC_gain_APP.sql) depends on a source named 'oeil_traitement-processing.faits_GFC_gain_APP' which was not found
+[0m09:56:56.271261 [debug] [MainThread]: Command `dbt run` failed at 09:56:56.271261 after 1.83 seconds
+[0m09:56:56.271261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C5153050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C51529D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D1C66DD990>]}
+[0m09:56:56.271261 [debug] [MainThread]: Flushing usage events
+[0m10:01:41.628819 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E7BC2F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E7BC31D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E7BC3290>]}
+
+
+============================== 10:01:41.644403 | a196064d-889f-4a11-8475-82a5dc46d43a ==============================
+[0m10:01:41.644403 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:01:41.644403 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'debug': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run -models models_test', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:01:41.829437 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a196064d-889f-4a11-8475-82a5dc46d43a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E52A0890>]}
+[0m10:01:41.876312 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a196064d-889f-4a11-8475-82a5dc46d43a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E4F01D10>]}
+[0m10:01:41.891945 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:01:41.891945 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:01:41.891945 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:01:41.891945 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'a196064d-889f-4a11-8475-82a5dc46d43a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E7DAC450>]}
+[0m10:01:42.895424 [error] [MainThread]: Encountered an error:
+Compilation Error in model models_test (models\models_test.sql)
+  source() takes exactly two arguments (1 given)
+[0m10:01:42.895424 [debug] [MainThread]: Command `dbt run` failed at 10:01:42.895424 after 1.36 seconds
+[0m10:01:42.911050 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E7C18650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E7BF2A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000251E7F1F210>]}
+[0m10:01:42.911050 [debug] [MainThread]: Flushing usage events
+[0m10:02:20.159362 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252ED9B3690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EDB2FF10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EDAE3E90>]}
+
+
+============================== 10:02:20.175000 | ceb0372a-272d-41dc-87e6-e0056ee2faa0 ==============================
+[0m10:02:20.175000 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:02:20.175000 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'invocation_command': 'dbt run -models models_test', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:02:20.346663 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'ceb0372a-272d-41dc-87e6-e0056ee2faa0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EDC99F10>]}
+[0m10:02:20.416254 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'ceb0372a-272d-41dc-87e6-e0056ee2faa0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EADF5A50>]}
+[0m10:02:20.416254 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:02:20.423064 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:02:20.423064 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:02:20.423064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'ceb0372a-272d-41dc-87e6-e0056ee2faa0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EDD15D90>]}
+[0m10:02:21.910829 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_bilbo.faits_GFC_gain_APP' (models\faits_GFC_gain_APP.sql) depends on a source named 'oeil_traitement-processing.faits_GFC_gain_APP' which was not found
+[0m10:02:21.910829 [debug] [MainThread]: Command `dbt run` failed at 10:02:21.910829 after 1.84 seconds
+[0m10:02:21.910829 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EDAE2C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EDAE3290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252EDE0F210>]}
+[0m10:02:21.910829 [debug] [MainThread]: Flushing usage events
+[0m10:02:55.596676 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026687243610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002668701ADD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026687242C50>]}
+
+
+============================== 10:02:55.603555 | 2cec75b5-63c3-45aa-b719-09a5ccf9446c ==============================
+[0m10:02:55.603555 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:02:55.603555 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run -models models_test', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:02:55.789874 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2cec75b5-63c3-45aa-b719-09a5ccf9446c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000266872B93D0>]}
+[0m10:02:55.836787 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2cec75b5-63c3-45aa-b719-09a5ccf9446c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026684561E90>]}
+[0m10:02:55.852384 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:02:55.852384 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:02:55.852384 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:02:55.852384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '2cec75b5-63c3-45aa-b719-09a5ccf9446c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000266874686D0>]}
+[0m10:02:57.321977 [error] [MainThread]: Encountered an error:
+Compilation Error
+  Model 'model.dbt_bilbo.faits_GFC_gain_APP' (models\processing_src\faits_GFC_gain_APP.sql) depends on a source named 'oeil_traitement-processing.faits_GFC_gain_APP' which was not found
+[0m10:02:57.337575 [debug] [MainThread]: Command `dbt run` failed at 10:02:57.337575 after 1.84 seconds
+[0m10:02:57.337575 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026687242950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000026687249C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000266872481D0>]}
+[0m10:02:57.337575 [debug] [MainThread]: Flushing usage events
+[0m10:04:07.679693 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BDE83710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BDE83650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BDE82ED0>]}
+
+
+============================== 10:04:07.686690 | e9dc9d26-071f-407b-aabf-0dd1d437b8e3 ==============================
+[0m10:04:07.686690 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:04:07.686690 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'version_check': 'True', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'invocation_command': 'dbt run -models models_test', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:04:07.881738 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BD2BDD10>]}
+[0m10:04:07.944221 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BB1A25D0>]}
+[0m10:04:07.944221 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:04:07.957494 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:04:07.957494 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m10:04:07.957494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BDDAA990>]}
+[0m10:04:09.299093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BE025210>]}
+[0m10:04:09.436235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BF42D350>]}
+[0m10:04:09.436235 [info ] [MainThread]: Found 1 model, 11 analyses, 1 source, 416 macros
+[0m10:04:09.436235 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BE025B50>]}
+[0m10:04:09.436235 [warn ] [MainThread]: The selection criterion 'odels' does not match any enabled nodes
+[0m10:04:09.436235 [info ] [MainThread]: 
+[0m10:04:09.436235 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:04:09.452397 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m10:04:09.588999 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m10:04:09.588999 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:04:09.588999 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:04:09.620342 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.023 seconds
+[0m10:04:09.621313 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m10:04:09.621313 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m10:04:09.621313 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:04:09.621313 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m10:04:09.621313 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:04:09.637035 [debug] [ThreadPool]: SQL status: BEGIN in 0.021 seconds
+[0m10:04:09.652701 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:04:09.652701 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m10:04:09.652701 [debug] [ThreadPool]: SQL status: SELECT 128 in 0.012 seconds
+[0m10:04:09.668371 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m10:04:09.668371 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m10:04:09.683997 [debug] [MainThread]: Using postgres connection "master"
+[0m10:04:09.683997 [debug] [MainThread]: On master: BEGIN
+[0m10:04:09.683997 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:04:09.715896 [debug] [MainThread]: SQL status: BEGIN in 0.030 seconds
+[0m10:04:09.715896 [debug] [MainThread]: Using postgres connection "master"
+[0m10:04:09.715896 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:04:10.254870 [debug] [MainThread]: SQL status: SELECT 942 in 0.537 seconds
+[0m10:04:10.286341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BE1B25D0>]}
+[0m10:04:10.286341 [debug] [MainThread]: On master: ROLLBACK
+[0m10:04:10.286341 [debug] [MainThread]: Using postgres connection "master"
+[0m10:04:10.286341 [debug] [MainThread]: On master: BEGIN
+[0m10:04:10.286341 [debug] [MainThread]: SQL status: BEGIN in 0.003 seconds
+[0m10:04:10.286341 [debug] [MainThread]: On master: COMMIT
+[0m10:04:10.286341 [debug] [MainThread]: Using postgres connection "master"
+[0m10:04:10.286341 [debug] [MainThread]: On master: COMMIT
+[0m10:04:10.286341 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m10:04:10.286341 [debug] [MainThread]: On master: Close
+[0m10:04:10.286341 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:04:10.301966 [info ] [MainThread]: 
+[0m10:04:10.301966 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.models_test
+[0m10:04:10.301966 [info ] [Thread-1 (]: 1 of 1 START sql table model processing.dtm_alldim_TMF_annualChangeCollection_h3_nc_6  [RUN]
+[0m10:04:10.301966 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.models_test'
+[0m10:04:10.313427 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.models_test
+[0m10:04:10.324646 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.models_test"
+[0m10:04:10.327191 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.models_test
+[0m10:04:10.366754 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.models_test"
+[0m10:04:10.366754 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:04:10.382413 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: BEGIN
+[0m10:04:10.382413 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:04:10.398097 [debug] [Thread-1 (]: SQL status: BEGIN in 0.024 seconds
+[0m10:04:10.398097 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:04:10.398097 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+
+  
+    
+
+  create  table "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+
+
+
+
+
+
+
+SELECT
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe,
+    SUM(values) AS sum_values
+FROM
+    "oeil_traitement"."surfor"."faits_TMF_annualChangeCollection_h3_nc_6"
+GROUP BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+ORDER BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe;
+  );
+  
+[0m10:04:10.398097 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ";"
+LINE 41:     classe;
+                   ^
+
+[0m10:04:10.398097 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: ROLLBACK
+[0m10:04:10.398097 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: Close
+[0m10:04:10.429921 [debug] [Thread-1 (]: Database Error in model models_test (models\models_test.sql)
+  syntax error at or near ";"
+  LINE 41:     classe;
+                     ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:04:10.429921 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e9dc9d26-071f-407b-aabf-0dd1d437b8e3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BF8DEA90>]}
+[0m10:04:10.429921 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model processing.dtm_alldim_TMF_annualChangeCollection_h3_nc_6  [[31mERROR[0m in 0.13s]
+[0m10:04:10.429921 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.models_test
+[0m10:04:10.429921 [debug] [MainThread]: Using postgres connection "master"
+[0m10:04:10.429921 [debug] [MainThread]: On master: BEGIN
+[0m10:04:10.429921 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:04:10.451036 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m10:04:10.451036 [debug] [MainThread]: On master: COMMIT
+[0m10:04:10.456777 [debug] [MainThread]: Using postgres connection "master"
+[0m10:04:10.457483 [debug] [MainThread]: On master: COMMIT
+[0m10:04:10.457483 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m10:04:10.457483 [debug] [MainThread]: On master: Close
+[0m10:04:10.457483 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:04:10.457483 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m10:04:10.463455 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m10:04:10.464169 [debug] [MainThread]: Connection 'model.dbt_bilbo.models_test' was properly closed.
+[0m10:04:10.464169 [info ] [MainThread]: 
+[0m10:04:10.464169 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.03 seconds (1.03s).
+[0m10:04:10.464169 [debug] [MainThread]: Command end result
+[0m10:04:10.512161 [info ] [MainThread]: 
+[0m10:04:10.514157 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m10:04:10.514789 [info ] [MainThread]: 
+[0m10:04:10.514789 [error] [MainThread]:   Database Error in model models_test (models\models_test.sql)
+  syntax error at or near ";"
+  LINE 41:     classe;
+                     ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:04:10.519526 [info ] [MainThread]: 
+[0m10:04:10.519526 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m10:04:10.519526 [debug] [MainThread]: Command `dbt run` failed at 10:04:10.519526 after 2.94 seconds
+[0m10:04:10.519526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191BDE82C50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191B7834490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000191B7837A90>]}
+[0m10:04:10.519526 [debug] [MainThread]: Flushing usage events
+[0m10:27:30.838853 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5AF23950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5AF60D50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5AF60150>]}
+
+
+============================== 10:27:30.838853 | 0bf898c9-fb7f-46b7-ad17-cc443a548132 ==============================
+[0m10:27:30.838853 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:27:30.838853 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run -models models_test', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:27:31.025488 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0bf898c9-fb7f-46b7-ad17-cc443a548132', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5B074810>]}
+[0m10:27:31.087998 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0bf898c9-fb7f-46b7-ad17-cc443a548132', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A58232310>]}
+[0m10:27:31.087998 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:27:31.087998 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:27:31.282116 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:27:31.282116 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:27:31.534034 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0bf898c9-fb7f-46b7-ad17-cc443a548132', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5C41A950>]}
+[0m10:27:31.643420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0bf898c9-fb7f-46b7-ad17-cc443a548132', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5C48A110>]}
+[0m10:27:31.643420 [info ] [MainThread]: Found 11 analyses, 1 model, 1 source, 416 macros
+[0m10:27:31.643420 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0bf898c9-fb7f-46b7-ad17-cc443a548132', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5C41A750>]}
+[0m10:27:31.643420 [warn ] [MainThread]: The selection criterion 'odels' does not match any enabled nodes
+[0m10:27:31.643420 [info ] [MainThread]: 
+[0m10:27:31.643420 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:27:31.643420 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m10:27:31.789576 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m10:27:31.789576 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:27:31.789576 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:27:31.805265 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.021 seconds
+[0m10:27:31.805265 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m10:27:31.805265 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m10:27:31.820797 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:27:31.820797 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m10:27:31.820797 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:27:31.836528 [debug] [ThreadPool]: SQL status: BEGIN in 0.028 seconds
+[0m10:27:31.836528 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:27:31.852046 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m10:27:31.852046 [debug] [ThreadPool]: SQL status: SELECT 128 in 0.013 seconds
+[0m10:27:31.867696 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m10:27:31.867696 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m10:27:31.898946 [debug] [MainThread]: Using postgres connection "master"
+[0m10:27:31.898946 [debug] [MainThread]: On master: BEGIN
+[0m10:27:31.898946 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:27:31.914649 [debug] [MainThread]: SQL status: BEGIN in 0.027 seconds
+[0m10:27:31.914649 [debug] [MainThread]: Using postgres connection "master"
+[0m10:27:31.914649 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:27:32.485399 [debug] [MainThread]: SQL status: SELECT 942 in 0.560 seconds
+[0m10:27:32.500992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0bf898c9-fb7f-46b7-ad17-cc443a548132', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5B348190>]}
+[0m10:27:32.500992 [debug] [MainThread]: On master: ROLLBACK
+[0m10:27:32.500992 [debug] [MainThread]: Using postgres connection "master"
+[0m10:27:32.500992 [debug] [MainThread]: On master: BEGIN
+[0m10:27:32.500992 [debug] [MainThread]: SQL status: BEGIN in 0.002 seconds
+[0m10:27:32.500992 [debug] [MainThread]: On master: COMMIT
+[0m10:27:32.516616 [debug] [MainThread]: Using postgres connection "master"
+[0m10:27:32.517301 [debug] [MainThread]: On master: COMMIT
+[0m10:27:32.517570 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m10:27:32.517570 [debug] [MainThread]: On master: Close
+[0m10:27:32.517570 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:27:32.517570 [info ] [MainThread]: 
+[0m10:27:32.517570 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.models_test
+[0m10:27:32.517570 [info ] [Thread-1 (]: 1 of 1 START sql table model processing.dtm_alldim_TMF_annualChangeCollection_h3_nc_6  [RUN]
+[0m10:27:32.517570 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.models_test'
+[0m10:27:32.517570 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.models_test
+[0m10:27:32.539363 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.models_test"
+[0m10:27:32.539363 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.models_test
+[0m10:27:32.578746 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.models_test"
+[0m10:27:32.578746 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:27:32.578746 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: BEGIN
+[0m10:27:32.578746 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:27:32.610097 [debug] [Thread-1 (]: SQL status: BEGIN in 0.026 seconds
+[0m10:27:32.610097 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:27:32.610097 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+
+  
+    
+
+  create  table "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+
+
+
+
+
+
+
+SELECT
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe,
+    SUM(values) AS sum_values
+FROM
+    "oeil_traitement"."surfor"."faits_TMF_annualChangeCollection_h3_nc_6"
+GROUP BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+ORDER BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+  );
+  
+[0m10:29:28.954228 [debug] [Thread-1 (]: SQL status: SELECT 5553 in 116.344 seconds
+[0m10:29:28.969849 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:29:28.969849 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+alter table "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_tmp" rename to "dtm_alldim_TMF_annualChangeCollection_h3_nc_6"
+[0m10:29:28.969849 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m10:29:28.985450 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: COMMIT
+[0m10:29:28.985450 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:29:28.985450 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: COMMIT
+[0m10:29:29.016878 [debug] [Thread-1 (]: SQL status: COMMIT in 0.026 seconds
+[0m10:29:29.016878 [debug] [Thread-1 (]: Applying DROP to: "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_backup"
+[0m10:29:29.032672 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:29:29.032672 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+drop table if exists "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_backup" cascade
+[0m10:29:29.032672 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.003 seconds
+[0m10:29:29.032672 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: Close
+[0m10:29:29.032672 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0bf898c9-fb7f-46b7-ad17-cc443a548132', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A5C7F49D0>]}
+[0m10:29:29.032672 [info ] [Thread-1 (]: 1 of 1 OK created sql table model processing.dtm_alldim_TMF_annualChangeCollection_h3_nc_6  [[32mSELECT 5553[0m in 116.52s]
+[0m10:29:29.032672 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.models_test
+[0m10:29:29.048335 [debug] [MainThread]: Using postgres connection "master"
+[0m10:29:29.048335 [debug] [MainThread]: On master: BEGIN
+[0m10:29:29.048335 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:29:29.077725 [debug] [MainThread]: SQL status: BEGIN in 0.028 seconds
+[0m10:29:29.077725 [debug] [MainThread]: On master: COMMIT
+[0m10:29:29.077725 [debug] [MainThread]: Using postgres connection "master"
+[0m10:29:29.077725 [debug] [MainThread]: On master: COMMIT
+[0m10:29:29.084161 [debug] [MainThread]: SQL status: COMMIT in 0.002 seconds
+[0m10:29:29.084161 [debug] [MainThread]: On master: Close
+[0m10:29:29.084161 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:29:29.084161 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m10:29:29.084161 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m10:29:29.084161 [debug] [MainThread]: Connection 'model.dbt_bilbo.models_test' was properly closed.
+[0m10:29:29.084161 [info ] [MainThread]: 
+[0m10:29:29.084161 [info ] [MainThread]: Finished running 1 table model in 0 hours 1 minutes and 57.44 seconds (117.44s).
+[0m10:29:29.090375 [debug] [MainThread]: Command end result
+[0m10:29:29.177660 [info ] [MainThread]: 
+[0m10:29:29.177660 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m10:29:29.177660 [info ] [MainThread]: 
+[0m10:29:29.177660 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m10:29:29.177660 [debug] [MainThread]: Command `dbt run` succeeded at 10:29:29.177660 after 118.43 seconds
+[0m10:29:29.177660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A54956B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A548E7A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000028A580FFAD0>]}
+[0m10:29:29.177660 [debug] [MainThread]: Flushing usage events
+[0m10:51:58.288145 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017245453110>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724522ADD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172454529D0>]}
+
+
+============================== 10:51:58.296120 | bb532dc9-182e-4bc2-83e3-92b0b051dd57 ==============================
+[0m10:51:58.296120 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:51:58.297113 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'debug': 'False', 'version_check': 'True', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'fail_fast': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run -models models_test', 'send_anonymous_usage_stats': 'True'}
+[0m10:51:58.554888 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bb532dc9-182e-4bc2-83e3-92b0b051dd57', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017245600750>]}
+[0m10:51:58.601768 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'bb532dc9-182e-4bc2-83e3-92b0b051dd57', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000172427721D0>]}
+[0m10:51:58.601768 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:51:58.617361 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:51:58.822117 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 1 files changed.
+[0m10:51:58.822117 [debug] [MainThread]: Partial parsing: added file: dbt_bilbo://macros\macros_test.sql
+[0m10:51:58.822117 [debug] [MainThread]: Partial parsing: deleted file: dbt_bilbo://macros\macro_dtm_alldim_avec_classe.sql
+[0m10:51:58.822117 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:51:59.002617 [error] [MainThread]: Encountered an error:
+Parsing Error
+  at path ['alias']: Undefined is not valid under any of the given schemas
+[0m10:51:59.002617 [debug] [MainThread]: Command `dbt run` failed at 10:51:59.002617 after 0.91 seconds
+[0m10:51:59.002617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000017245452890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001723EDE4490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001724545AB50>]}
+[0m10:51:59.002617 [debug] [MainThread]: Flushing usage events
+[0m10:52:20.071125 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B3A3290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B17ADD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B3A3250>]}
+
+
+============================== 10:52:20.071125 | d78a3391-1d9f-4d3b-9f06-526a1e186960 ==============================
+[0m10:52:20.071125 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:52:20.071125 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'debug': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run -models models_test', 'send_anonymous_usage_stats': 'True'}
+[0m10:52:20.266134 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'd78a3391-1d9f-4d3b-9f06-526a1e186960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B3EF710>]}
+[0m10:52:20.313047 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'd78a3391-1d9f-4d3b-9f06-526a1e186960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A7286C5BD0>]}
+[0m10:52:20.313047 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:52:20.328674 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:52:20.514229 [debug] [MainThread]: Partial parsing enabled: 1 files deleted, 1 files added, 1 files changed.
+[0m10:52:20.514229 [debug] [MainThread]: Partial parsing: added file: dbt_bilbo://macros\macros_test.sql
+[0m10:52:20.514229 [debug] [MainThread]: Partial parsing: deleted file: dbt_bilbo://macros\macro_dtm_alldim_avec_classe.sql
+[0m10:52:20.514229 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:52:20.750561 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'd78a3391-1d9f-4d3b-9f06-526a1e186960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B4CA410>]}
+[0m10:52:20.876654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'd78a3391-1d9f-4d3b-9f06-526a1e186960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72C90D610>]}
+[0m10:52:20.876654 [info ] [MainThread]: Found 11 analyses, 1 model, 1 source, 416 macros
+[0m10:52:20.876654 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd78a3391-1d9f-4d3b-9f06-526a1e186960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B7CA150>]}
+[0m10:52:20.876654 [warn ] [MainThread]: The selection criterion 'odels' does not match any enabled nodes
+[0m10:52:20.876654 [info ] [MainThread]: 
+[0m10:52:20.876654 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:52:20.876654 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m10:52:21.026205 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m10:52:21.026205 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:52:21.026205 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:52:21.047060 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.023 seconds
+[0m10:52:21.047060 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m10:52:21.053993 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m10:52:21.060758 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:52:21.060882 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m10:52:21.060882 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:52:21.076714 [debug] [ThreadPool]: SQL status: BEGIN in 0.023 seconds
+[0m10:52:21.076714 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:52:21.076714 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m10:52:21.092437 [debug] [ThreadPool]: SQL status: SELECT 128 in 0.011 seconds
+[0m10:52:21.092437 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m10:52:21.092437 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m10:52:21.123629 [debug] [MainThread]: Using postgres connection "master"
+[0m10:52:21.123629 [debug] [MainThread]: On master: BEGIN
+[0m10:52:21.123629 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:52:21.139254 [debug] [MainThread]: SQL status: BEGIN in 0.014 seconds
+[0m10:52:21.139254 [debug] [MainThread]: Using postgres connection "master"
+[0m10:52:21.139254 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:52:21.673415 [debug] [MainThread]: SQL status: SELECT 941 in 0.536 seconds
+[0m10:52:21.705367 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'd78a3391-1d9f-4d3b-9f06-526a1e186960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B83A210>]}
+[0m10:52:21.705367 [debug] [MainThread]: On master: ROLLBACK
+[0m10:52:21.705367 [debug] [MainThread]: Using postgres connection "master"
+[0m10:52:21.705367 [debug] [MainThread]: On master: BEGIN
+[0m10:52:21.705367 [debug] [MainThread]: SQL status: BEGIN in 0.002 seconds
+[0m10:52:21.705367 [debug] [MainThread]: On master: COMMIT
+[0m10:52:21.705367 [debug] [MainThread]: Using postgres connection "master"
+[0m10:52:21.705367 [debug] [MainThread]: On master: COMMIT
+[0m10:52:21.705367 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m10:52:21.705367 [debug] [MainThread]: On master: Close
+[0m10:52:21.705367 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:52:21.705367 [info ] [MainThread]: 
+[0m10:52:21.720989 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.models_test
+[0m10:52:21.720989 [info ] [Thread-1 (]: 1 of 1 START sql table model processing.models_test ............................ [RUN]
+[0m10:52:21.720989 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.models_test'
+[0m10:52:21.720989 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.models_test
+[0m10:52:21.720989 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.models_test"
+[0m10:52:21.720989 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.models_test
+[0m10:52:21.782748 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.models_test"
+[0m10:52:21.782748 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:52:21.782748 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: BEGIN
+[0m10:52:21.782748 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:52:21.798480 [debug] [Thread-1 (]: SQL status: BEGIN in 0.016 seconds
+[0m10:52:21.798480 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:52:21.798480 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+
+  
+    
+
+  create  table "oeil_traitement"."processing"."models_test__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+
+macros_test(schema, table_name)
+
+SELECT
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe,
+    SUM(values) AS sum_values
+FROM
+    "oeil_traitement"."surfor"."faits_TMF_annualChangeCollection_h3_nc_6"
+GROUP BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+ORDER BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+  );
+  
+[0m10:52:21.798480 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near "macros_test"
+LINE 15: macros_test(schema, table_name)
+         ^
+
+[0m10:52:21.798480 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: ROLLBACK
+[0m10:52:21.798480 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: Close
+[0m10:52:21.829661 [debug] [Thread-1 (]: Database Error in model models_test (models\models_test.sql)
+  syntax error at or near "macros_test"
+  LINE 15: macros_test(schema, table_name)
+           ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:52:21.829661 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'd78a3391-1d9f-4d3b-9f06-526a1e186960', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72CD0B390>]}
+[0m10:52:21.829661 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model processing.models_test ................... [[31mERROR[0m in 0.11s]
+[0m10:52:21.829661 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.models_test
+[0m10:52:21.829661 [debug] [MainThread]: Using postgres connection "master"
+[0m10:52:21.829661 [debug] [MainThread]: On master: BEGIN
+[0m10:52:21.829661 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:52:21.853259 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m10:52:21.853259 [debug] [MainThread]: On master: COMMIT
+[0m10:52:21.853259 [debug] [MainThread]: Using postgres connection "master"
+[0m10:52:21.853259 [debug] [MainThread]: On master: COMMIT
+[0m10:52:21.853259 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m10:52:21.853259 [debug] [MainThread]: On master: Close
+[0m10:52:21.859010 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:52:21.860011 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m10:52:21.860011 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m10:52:21.861010 [debug] [MainThread]: Connection 'model.dbt_bilbo.models_test' was properly closed.
+[0m10:52:21.861010 [info ] [MainThread]: 
+[0m10:52:21.862011 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 0.98 seconds (0.98s).
+[0m10:52:21.863010 [debug] [MainThread]: Command end result
+[0m10:52:21.896486 [info ] [MainThread]: 
+[0m10:52:21.897647 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m10:52:21.898157 [info ] [MainThread]: 
+[0m10:52:21.900518 [error] [MainThread]:   Database Error in model models_test (models\models_test.sql)
+  syntax error at or near "macros_test"
+  LINE 15: macros_test(schema, table_name)
+           ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:52:21.901647 [info ] [MainThread]: 
+[0m10:52:21.901647 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m10:52:21.901647 [debug] [MainThread]: Command `dbt run` failed at 10:52:21.901647 after 1.92 seconds
+[0m10:52:21.901647 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B3A2A10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A72B542F50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A724DD6B90>]}
+[0m10:52:21.901647 [debug] [MainThread]: Flushing usage events
+[0m10:52:46.567438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252353F3B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025235430190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252351CADD0>]}
+
+
+============================== 10:52:46.567438 | 2282fef4-d632-4e83-9bad-a1263c93b1f6 ==============================
+[0m10:52:46.567438 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:52:46.567438 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run -models models_test', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:52:46.764161 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '2282fef4-d632-4e83-9bad-a1263c93b1f6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252355F3550>]}
+[0m10:52:46.811033 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '2282fef4-d632-4e83-9bad-a1263c93b1f6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025232701C90>]}
+[0m10:52:46.811033 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:52:46.827270 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:52:47.021071 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:52:47.021071 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:52:47.193600 [error] [MainThread]: Encountered an error:
+Compilation Error in model models_test (models\models_test.sql)
+  Encountered unknown tag 'macros_test'.
+    line 4
+      {% macros_test(schema, table_name) %}
+[0m10:52:47.209251 [debug] [MainThread]: Command `dbt run` failed at 10:52:47.209251 after 0.73 seconds
+[0m10:52:47.209251 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252353F2990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002523404E090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002523543F0D0>]}
+[0m10:52:47.209251 [debug] [MainThread]: Flushing usage events
+[0m10:54:56.253338 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4FB373090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4FB373350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4FB373110>]}
+
+
+============================== 10:54:56.253338 | 4fbd66ec-89e5-4d8a-b388-23b4a6e62991 ==============================
+[0m10:54:56.253338 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:54:56.253338 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m10:54:56.449889 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4fbd66ec-89e5-4d8a-b388-23b4a6e62991', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4FB373E50>]}
+[0m10:54:56.496795 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4fbd66ec-89e5-4d8a-b388-23b4a6e62991', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4F8691E90>]}
+[0m10:54:56.496795 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:54:56.512424 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:54:56.697685 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m10:54:56.697685 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://macros\macros_test.sql
+[0m10:54:56.697685 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:54:56.861979 [error] [MainThread]: Encountered an error:
+Compilation Error in model models_test (models\models_test.sql)
+  Unexpected end of template. Jinja was looking for the following tags: 'endmacro'. The innermost block that needs to be closed is 'macro'.
+    line 14
+      {{ source(schema, table_name) }}
+[0m10:54:56.861979 [debug] [MainThread]: Command `dbt run` failed at 10:54:56.861979 after 0.71 seconds
+[0m10:54:56.861979 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4FB3CAC50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4FB695950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E4FB3731D0>]}
+[0m10:54:56.861979 [debug] [MainThread]: Flushing usage events
+[0m10:57:52.739640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE40EF2D90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE40F3DC90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE40F3DDD0>]}
+
+
+============================== 10:57:52.739640 | 9246f7fd-6c28-480f-b8d1-44d5ed9ef643 ==============================
+[0m10:57:52.739640 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:57:52.739640 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:57:52.936132 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9246f7fd-6c28-480f-b8d1-44d5ed9ef643', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE40EF8390>]}
+[0m10:57:52.983007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9246f7fd-6c28-480f-b8d1-44d5ed9ef643', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE3E211C10>]}
+[0m10:57:52.983007 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:57:53.003744 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:57:53.180342 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m10:57:53.180342 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://macros\macros_test.sql
+[0m10:57:53.195968 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:57:53.352997 [error] [MainThread]: Encountered an error:
+Compilation Error in model models_test (models\models_test.sql)
+  Unexpected end of template. Jinja was looking for the following tags: 'endmacro'. The innermost block that needs to be closed is 'macro'.
+    line 14
+      {{ source(schema, table_name) }}
+[0m10:57:53.352997 [debug] [MainThread]: Command `dbt run` failed at 10:57:53.352997 after 0.71 seconds
+[0m10:57:53.352997 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE3A829C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE3A82A7D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE3A829C50>]}
+[0m10:57:53.352997 [debug] [MainThread]: Flushing usage events
+[0m10:58:24.189956 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBD7F3610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBD7F3350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBD7F3250>]}
+
+
+============================== 10:58:24.205581 | 8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb ==============================
+[0m10:58:24.205581 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:58:24.205581 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt run', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m10:58:24.386261 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBD7F85D0>]}
+[0m10:58:24.433139 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBAB124D0>]}
+[0m10:58:24.448763 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:58:24.448763 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:58:24.629341 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m10:58:24.644967 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://macros\macros_test.sql
+[0m10:58:24.644967 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:58:24.875299 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBD7F9250>]}
+[0m10:58:24.984701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBDC30450>]}
+[0m10:58:24.984701 [info ] [MainThread]: Found 11 analyses, 1 model, 1 source, 416 macros
+[0m10:58:24.984701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBDC3C490>]}
+[0m10:58:24.984701 [info ] [MainThread]: 
+[0m10:58:24.984701 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:58:25.000885 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m10:58:25.128642 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m10:58:25.128642 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:58:25.128642 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:58:25.176629 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.051 seconds
+[0m10:58:25.192232 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m10:58:25.192232 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m10:58:25.208396 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:58:25.208396 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m10:58:25.208396 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:58:25.255368 [debug] [ThreadPool]: SQL status: BEGIN in 0.052 seconds
+[0m10:58:25.255368 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:58:25.255368 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m10:58:25.271010 [debug] [ThreadPool]: SQL status: SELECT 128 in 0.018 seconds
+[0m10:58:25.271010 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m10:58:25.286619 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m10:58:25.317780 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:25.317780 [debug] [MainThread]: On master: BEGIN
+[0m10:58:25.317780 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:58:25.380373 [debug] [MainThread]: SQL status: BEGIN in 0.065 seconds
+[0m10:58:25.380373 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:25.380373 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:58:25.953236 [debug] [MainThread]: SQL status: SELECT 941 in 0.564 seconds
+[0m10:58:25.968901 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBF054E10>]}
+[0m10:58:25.968901 [debug] [MainThread]: On master: ROLLBACK
+[0m10:58:25.984500 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:25.984500 [debug] [MainThread]: On master: BEGIN
+[0m10:58:25.984500 [debug] [MainThread]: SQL status: BEGIN in 0.010 seconds
+[0m10:58:25.984500 [debug] [MainThread]: On master: COMMIT
+[0m10:58:25.984500 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:25.984500 [debug] [MainThread]: On master: COMMIT
+[0m10:58:26.000209 [debug] [MainThread]: SQL status: COMMIT in 0.006 seconds
+[0m10:58:26.000209 [debug] [MainThread]: On master: Close
+[0m10:58:26.000209 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:58:26.000209 [info ] [MainThread]: 
+[0m10:58:26.000209 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.models_test
+[0m10:58:26.000209 [info ] [Thread-1 (]: 1 of 1 START sql table model processing.models_test ............................ [RUN]
+[0m10:58:26.000209 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.models_test'
+[0m10:58:26.014181 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.models_test
+[0m10:58:26.025023 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.models_test"
+[0m10:58:26.025023 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.models_test
+[0m10:58:26.072821 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.models_test"
+[0m10:58:26.072821 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:58:26.072821 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: BEGIN
+[0m10:58:26.072821 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:58:26.119800 [debug] [Thread-1 (]: SQL status: BEGIN in 0.043 seconds
+[0m10:58:26.119800 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:58:26.119800 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+
+  
+    
+
+  create  table "oeil_traitement"."processing"."models_test__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+
+
+  );
+  
+[0m10:58:26.119800 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ")"
+LINE 16:   );
+           ^
+
+[0m10:58:26.119800 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: ROLLBACK
+[0m10:58:26.135423 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: Close
+[0m10:58:26.150948 [debug] [Thread-1 (]: Database Error in model models_test (models\models_test.sql)
+  syntax error at or near ")"
+  LINE 16:   );
+             ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:58:26.150948 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '8bd0dee4-78ab-4b9d-9ae3-7e03cbca16fb', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBEDF8690>]}
+[0m10:58:26.150948 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model processing.models_test ................... [[31mERROR[0m in 0.15s]
+[0m10:58:26.150948 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.models_test
+[0m10:58:26.150948 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:26.150948 [debug] [MainThread]: On master: BEGIN
+[0m10:58:26.150948 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:58:26.204869 [debug] [MainThread]: SQL status: BEGIN in 0.053 seconds
+[0m10:58:26.220500 [debug] [MainThread]: On master: COMMIT
+[0m10:58:26.221694 [debug] [MainThread]: Using postgres connection "master"
+[0m10:58:26.221694 [debug] [MainThread]: On master: COMMIT
+[0m10:58:26.221694 [debug] [MainThread]: SQL status: COMMIT in 0.006 seconds
+[0m10:58:26.221694 [debug] [MainThread]: On master: Close
+[0m10:58:26.221694 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:58:26.221694 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m10:58:26.221694 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m10:58:26.237446 [debug] [MainThread]: Connection 'model.dbt_bilbo.models_test' was properly closed.
+[0m10:58:26.237964 [info ] [MainThread]: 
+[0m10:58:26.237964 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.25 seconds (1.25s).
+[0m10:58:26.237964 [debug] [MainThread]: Command end result
+[0m10:58:26.275050 [info ] [MainThread]: 
+[0m10:58:26.275050 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m10:58:26.287820 [info ] [MainThread]: 
+[0m10:58:26.288645 [error] [MainThread]:   Database Error in model models_test (models\models_test.sql)
+  syntax error at or near ")"
+  LINE 16:   );
+             ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:58:26.290684 [info ] [MainThread]: 
+[0m10:58:26.290684 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m10:58:26.292990 [debug] [MainThread]: Command `dbt run` failed at 10:58:26.292990 after 2.18 seconds
+[0m10:58:26.293980 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBA4D71D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCBED22010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FCB717A990>]}
+[0m10:58:26.294536 [debug] [MainThread]: Flushing usage events
+[0m10:59:23.618010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2ED92DD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2ED93210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2ED93250>]}
+
+
+============================== 10:59:23.634817 | c6214030-9b0e-46a4-acff-81684498983f ==============================
+[0m10:59:23.634817 [info ] [MainThread]: Running with dbt=1.8.3
+[0m10:59:23.634817 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m10:59:23.828345 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'c6214030-9b0e-46a4-acff-81684498983f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2C4603D0>]}
+[0m10:59:23.875260 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'c6214030-9b0e-46a4-acff-81684498983f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2C0B5790>]}
+[0m10:59:23.875260 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m10:59:23.894584 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m10:59:24.071142 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m10:59:24.071142 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m10:59:24.306917 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'c6214030-9b0e-46a4-acff-81684498983f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2EF21110>]}
+[0m10:59:24.417011 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'c6214030-9b0e-46a4-acff-81684498983f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF3037C150>]}
+[0m10:59:24.432649 [info ] [MainThread]: Found 11 analyses, 1 model, 1 source, 416 macros
+[0m10:59:24.432649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c6214030-9b0e-46a4-acff-81684498983f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF302E4610>]}
+[0m10:59:24.432649 [info ] [MainThread]: 
+[0m10:59:24.432649 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m10:59:24.432649 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m10:59:24.559467 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m10:59:24.559467 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m10:59:24.575087 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:59:24.622157 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.056 seconds
+[0m10:59:24.622157 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m10:59:24.622157 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m10:59:24.637704 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:59:24.637704 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m10:59:24.637704 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m10:59:24.701790 [debug] [ThreadPool]: SQL status: BEGIN in 0.062 seconds
+[0m10:59:24.701790 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m10:59:24.701790 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m10:59:24.717487 [debug] [ThreadPool]: SQL status: SELECT 128 in 0.020 seconds
+[0m10:59:24.733072 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m10:59:24.733072 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m10:59:24.748689 [debug] [MainThread]: Using postgres connection "master"
+[0m10:59:24.748689 [debug] [MainThread]: On master: BEGIN
+[0m10:59:24.764312 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m10:59:24.811843 [debug] [MainThread]: SQL status: BEGIN in 0.050 seconds
+[0m10:59:24.811843 [debug] [MainThread]: Using postgres connection "master"
+[0m10:59:24.811843 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m10:59:25.376127 [debug] [MainThread]: SQL status: SELECT 941 in 0.562 seconds
+[0m10:59:25.391701 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'c6214030-9b0e-46a4-acff-81684498983f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF30324AD0>]}
+[0m10:59:25.391701 [debug] [MainThread]: On master: ROLLBACK
+[0m10:59:25.407385 [debug] [MainThread]: Using postgres connection "master"
+[0m10:59:25.407385 [debug] [MainThread]: On master: BEGIN
+[0m10:59:25.422919 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m10:59:25.422919 [debug] [MainThread]: On master: COMMIT
+[0m10:59:25.422919 [debug] [MainThread]: Using postgres connection "master"
+[0m10:59:25.422919 [debug] [MainThread]: On master: COMMIT
+[0m10:59:25.422919 [debug] [MainThread]: SQL status: COMMIT in 0.007 seconds
+[0m10:59:25.422919 [debug] [MainThread]: On master: Close
+[0m10:59:25.422919 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m10:59:25.422919 [info ] [MainThread]: 
+[0m10:59:25.422919 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.models_test
+[0m10:59:25.438692 [info ] [Thread-1 (]: 1 of 1 START sql table model processing.models_test ............................ [RUN]
+[0m10:59:25.438692 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.models_test'
+[0m10:59:25.438692 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.models_test
+[0m10:59:25.450683 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.models_test"
+[0m10:59:25.450683 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.models_test
+[0m10:59:25.498570 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.models_test"
+[0m10:59:25.498570 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:59:25.498570 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: BEGIN
+[0m10:59:25.498570 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m10:59:25.545544 [debug] [Thread-1 (]: SQL status: BEGIN in 0.041 seconds
+[0m10:59:25.545544 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m10:59:25.545544 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+
+  
+    
+
+  create  table "oeil_traitement"."processing"."models_test__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+
+
+  );
+  
+[0m10:59:25.545544 [debug] [Thread-1 (]: Postgres adapter: Postgres error: syntax error at or near ")"
+LINE 16:   );
+           ^
+
+[0m10:59:25.545544 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: ROLLBACK
+[0m10:59:25.561155 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: Close
+[0m10:59:25.576704 [debug] [Thread-1 (]: Database Error in model models_test (models\models_test.sql)
+  syntax error at or near ")"
+  LINE 16:   );
+             ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:59:25.576704 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'c6214030-9b0e-46a4-acff-81684498983f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF306B5510>]}
+[0m10:59:25.592357 [error] [Thread-1 (]: 1 of 1 ERROR creating sql table model processing.models_test ................... [[31mERROR[0m in 0.14s]
+[0m10:59:25.592357 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.models_test
+[0m10:59:25.592357 [debug] [MainThread]: Using postgres connection "master"
+[0m10:59:25.592357 [debug] [MainThread]: On master: BEGIN
+[0m10:59:25.592357 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m10:59:25.643605 [debug] [MainThread]: SQL status: BEGIN in 0.044 seconds
+[0m10:59:25.644249 [debug] [MainThread]: On master: COMMIT
+[0m10:59:25.645279 [debug] [MainThread]: Using postgres connection "master"
+[0m10:59:25.646282 [debug] [MainThread]: On master: COMMIT
+[0m10:59:25.651390 [debug] [MainThread]: SQL status: COMMIT in 0.007 seconds
+[0m10:59:25.651390 [debug] [MainThread]: On master: Close
+[0m10:59:25.651390 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m10:59:25.651390 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m10:59:25.651390 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m10:59:25.651390 [debug] [MainThread]: Connection 'model.dbt_bilbo.models_test' was properly closed.
+[0m10:59:25.651390 [info ] [MainThread]: 
+[0m10:59:25.651390 [info ] [MainThread]: Finished running 1 table model in 0 hours 0 minutes and 1.22 seconds (1.22s).
+[0m10:59:25.651390 [debug] [MainThread]: Command end result
+[0m10:59:25.700516 [info ] [MainThread]: 
+[0m10:59:25.700516 [info ] [MainThread]: [31mCompleted with 1 error and 0 warnings:[0m
+[0m10:59:25.700516 [info ] [MainThread]: 
+[0m10:59:25.700516 [error] [MainThread]:   Database Error in model models_test (models\models_test.sql)
+  syntax error at or near ")"
+  LINE 16:   );
+             ^
+  compiled Code at target\run\dbt_bilbo\models\models_test.sql
+[0m10:59:25.706542 [info ] [MainThread]: 
+[0m10:59:25.707453 [info ] [MainThread]: Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[0m10:59:25.707453 [debug] [MainThread]: Command `dbt run` failed at 10:59:25.707453 after 2.17 seconds
+[0m10:59:25.707453 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2EDEA990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF286DA990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FF2E17EA90>]}
+[0m10:59:25.707453 [debug] [MainThread]: Flushing usage events
+[0m11:00:05.835640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FD833310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FD833350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FD8338D0>]}
+
+
+============================== 11:00:05.835640 | 0109ee9d-993f-4713-92ab-f2cd3d5dccb1 ==============================
+[0m11:00:05.835640 [info ] [MainThread]: Running with dbt=1.8.3
+[0m11:00:05.835640 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': 'C:\\Users\\Stagiaire\\.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'D:\\dbt_workspace\\DBT\\dbt_bilbo\\logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run -models models_test', 'send_anonymous_usage_stats': 'True'}
+[0m11:00:06.028526 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0109ee9d-993f-4713-92ab-f2cd3d5dccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FD958190>]}
+[0m11:00:06.075438 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0109ee9d-993f-4713-92ab-f2cd3d5dccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FAB42590>]}
+[0m11:00:06.075438 [info ] [MainThread]: Registered adapter: postgres=1.8.2
+[0m11:00:06.094604 [debug] [MainThread]: checksum: 30bd4080c2bc8dee5936f8f60083ffbe1c906859d0fd965607c2144031479456, vars: {}, profile: , target: , version: 1.8.3
+[0m11:00:06.278499 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m11:00:06.278499 [debug] [MainThread]: Partial parsing: updated file: dbt_bilbo://models\models_test.sql
+[0m11:00:06.511359 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0109ee9d-993f-4713-92ab-f2cd3d5dccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FDD1BCD0>]}
+[0m11:00:06.625472 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0109ee9d-993f-4713-92ab-f2cd3d5dccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FDD40590>]}
+[0m11:00:06.625472 [info ] [MainThread]: Found 11 analyses, 1 model, 1 source, 416 macros
+[0m11:00:06.625472 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0109ee9d-993f-4713-92ab-f2cd3d5dccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FED92950>]}
+[0m11:00:06.625472 [warn ] [MainThread]: The selection criterion 'odels' does not match any enabled nodes
+[0m11:00:06.625472 [info ] [MainThread]: 
+[0m11:00:06.625472 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m11:00:06.625472 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement'
+[0m11:00:06.769884 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement"
+[0m11:00:06.769884 [debug] [ThreadPool]: On list_oeil_traitement: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m11:00:06.769884 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:00:06.816842 [debug] [ThreadPool]: SQL status: SELECT 18 in 0.049 seconds
+[0m11:00:06.816842 [debug] [ThreadPool]: On list_oeil_traitement: Close
+[0m11:00:06.832443 [debug] [ThreadPool]: Acquiring new postgres connection 'list_oeil_traitement_processing'
+[0m11:00:06.832443 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m11:00:06.832443 [debug] [ThreadPool]: On list_oeil_traitement_processing: BEGIN
+[0m11:00:06.832443 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m11:00:06.895209 [debug] [ThreadPool]: SQL status: BEGIN in 0.053 seconds
+[0m11:00:06.895209 [debug] [ThreadPool]: Using postgres connection "list_oeil_traitement_processing"
+[0m11:00:06.895209 [debug] [ThreadPool]: On list_oeil_traitement_processing: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "list_oeil_traitement_processing"} */
+select
+      'oeil_traitement' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'processing'
+    union all
+    select
+      'oeil_traitement' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'processing'
+  
+[0m11:00:06.910824 [debug] [ThreadPool]: SQL status: SELECT 128 in 0.020 seconds
+[0m11:00:06.926405 [debug] [ThreadPool]: On list_oeil_traitement_processing: ROLLBACK
+[0m11:00:06.926405 [debug] [ThreadPool]: On list_oeil_traitement_processing: Close
+[0m11:00:06.958218 [debug] [MainThread]: Using postgres connection "master"
+[0m11:00:06.958218 [debug] [MainThread]: On master: BEGIN
+[0m11:00:06.958218 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m11:00:07.005208 [debug] [MainThread]: SQL status: BEGIN in 0.048 seconds
+[0m11:00:07.005208 [debug] [MainThread]: Using postgres connection "master"
+[0m11:00:07.005208 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "connection_name": "master"} */
+with relation as (
+        select
+            pg_rewrite.ev_class as class,
+            pg_rewrite.oid as id
+        from pg_rewrite
+    ),
+    class as (
+        select
+            oid as id,
+            relname as name,
+            relnamespace as schema,
+            relkind as kind
+        from pg_class
+    ),
+    dependency as (
+        select distinct
+            pg_depend.objid as id,
+            pg_depend.refobjid as ref
+        from pg_depend
+    ),
+    schema as (
+        select
+            pg_namespace.oid as id,
+            pg_namespace.nspname as name
+        from pg_namespace
+        where nspname != 'information_schema' and nspname not like 'pg\_%'
+    ),
+    referenced as (
+        select
+            relation.id AS id,
+            referenced_class.name ,
+            referenced_class.schema ,
+            referenced_class.kind
+        from relation
+        join class as referenced_class on relation.class=referenced_class.id
+        where referenced_class.kind in ('r', 'v', 'm')
+    ),
+    relationships as (
+        select
+            referenced.name as referenced_name,
+            referenced.schema as referenced_schema_id,
+            dependent_class.name as dependent_name,
+            dependent_class.schema as dependent_schema_id,
+            referenced.kind as kind
+        from referenced
+        join dependency on referenced.id=dependency.id
+        join class as dependent_class on dependency.ref=dependent_class.id
+        where
+            (referenced.name != dependent_class.name or
+             referenced.schema != dependent_class.schema)
+    )
+
+    select
+        referenced_schema.name as referenced_schema,
+        relationships.referenced_name as referenced_name,
+        dependent_schema.name as dependent_schema,
+        relationships.dependent_name as dependent_name
+    from relationships
+    join schema as dependent_schema on relationships.dependent_schema_id=dependent_schema.id
+    join schema as referenced_schema on relationships.referenced_schema_id=referenced_schema.id
+    group by referenced_schema, referenced_name, dependent_schema, dependent_name
+    order by referenced_schema, referenced_name, dependent_schema, dependent_name;
+[0m11:00:07.574750 [debug] [MainThread]: SQL status: SELECT 941 in 0.569 seconds
+[0m11:00:07.590315 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0109ee9d-993f-4713-92ab-f2cd3d5dccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FF144290>]}
+[0m11:00:07.590315 [debug] [MainThread]: On master: ROLLBACK
+[0m11:00:07.606014 [debug] [MainThread]: Using postgres connection "master"
+[0m11:00:07.606014 [debug] [MainThread]: On master: BEGIN
+[0m11:00:07.621641 [debug] [MainThread]: SQL status: BEGIN in 0.013 seconds
+[0m11:00:07.621641 [debug] [MainThread]: On master: COMMIT
+[0m11:00:07.621641 [debug] [MainThread]: Using postgres connection "master"
+[0m11:00:07.621641 [debug] [MainThread]: On master: COMMIT
+[0m11:00:07.621641 [debug] [MainThread]: SQL status: COMMIT in 0.005 seconds
+[0m11:00:07.621641 [debug] [MainThread]: On master: Close
+[0m11:00:07.621641 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m11:00:07.621641 [info ] [MainThread]: 
+[0m11:00:07.637169 [debug] [Thread-1 (]: Began running node model.dbt_bilbo.models_test
+[0m11:00:07.637169 [info ] [Thread-1 (]: 1 of 1 START sql table model processing.dtm_alldim_TMF_annualChangeCollection_h3_nc_6  [RUN]
+[0m11:00:07.637169 [debug] [Thread-1 (]: Acquiring new postgres connection 'model.dbt_bilbo.models_test'
+[0m11:00:07.640781 [debug] [Thread-1 (]: Began compiling node model.dbt_bilbo.models_test
+[0m11:00:07.650944 [debug] [Thread-1 (]: Writing injected SQL for node "model.dbt_bilbo.models_test"
+[0m11:00:07.650944 [debug] [Thread-1 (]: Began executing node model.dbt_bilbo.models_test
+[0m11:00:07.698596 [debug] [Thread-1 (]: Writing runtime sql for node "model.dbt_bilbo.models_test"
+[0m11:00:07.698596 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m11:00:07.698596 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: BEGIN
+[0m11:00:07.698596 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m11:00:07.745576 [debug] [Thread-1 (]: SQL status: BEGIN in 0.043 seconds
+[0m11:00:07.745576 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m11:00:07.745576 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+
+  
+    
+
+  create  table "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_tmp"
+  
+  
+    as
+  
+  (
+    
+
+
+
+
+    
+    
+    
+    
+
+
+
+SELECT
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe,
+    SUM(values) AS sum_values
+FROM
+    "oeil_traitement"."surfor"."faits_TMF_annualChangeCollection_h3_nc_6"
+GROUP BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+ORDER BY
+    annee,
+    id_spatial,
+    upper_libelle,
+    level,
+    classe
+  );
+  
+[0m11:06:41.428804 [debug] [Thread-1 (]: SQL status: SELECT 5553 in 393.689 seconds
+[0m11:06:41.444381 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m11:06:41.444381 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+alter table "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_tmp" rename to "dtm_alldim_TMF_annualChangeCollection_h3_nc_6"
+[0m11:06:41.444381 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.008 seconds
+[0m11:06:41.475631 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: COMMIT
+[0m11:06:41.475631 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m11:06:41.475631 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: COMMIT
+[0m11:06:41.522565 [debug] [Thread-1 (]: SQL status: COMMIT in 0.054 seconds
+[0m11:06:41.538133 [debug] [Thread-1 (]: Applying DROP to: "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_backup"
+[0m11:06:41.538133 [debug] [Thread-1 (]: Using postgres connection "model.dbt_bilbo.models_test"
+[0m11:06:41.538133 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: /* {"app": "dbt", "dbt_version": "1.8.3", "profile_name": "dbt_bilbo", "target_name": "dev", "node_id": "model.dbt_bilbo.models_test"} */
+drop table if exists "oeil_traitement"."processing"."dtm_alldim_TMF_annualChangeCollection_h3_nc_6__dbt_backup" cascade
+[0m11:06:41.553760 [debug] [Thread-1 (]: SQL status: DROP TABLE in 0.007 seconds
+[0m11:06:41.553760 [debug] [Thread-1 (]: On model.dbt_bilbo.models_test: Close
+[0m11:06:41.553760 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '0109ee9d-993f-4713-92ab-f2cd3d5dccb1', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FD83AF90>]}
+[0m11:06:41.553760 [info ] [Thread-1 (]: 1 of 1 OK created sql table model processing.dtm_alldim_TMF_annualChangeCollection_h3_nc_6  [[32mSELECT 5553[0m in 393.92s]
+[0m11:06:41.553760 [debug] [Thread-1 (]: Finished running node model.dbt_bilbo.models_test
+[0m11:06:41.569356 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:41.569356 [debug] [MainThread]: On master: BEGIN
+[0m11:06:41.569356 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m11:06:41.625774 [debug] [MainThread]: SQL status: BEGIN in 0.055 seconds
+[0m11:06:41.626785 [debug] [MainThread]: On master: COMMIT
+[0m11:06:41.627786 [debug] [MainThread]: Using postgres connection "master"
+[0m11:06:41.627786 [debug] [MainThread]: On master: COMMIT
+[0m11:06:41.628843 [debug] [MainThread]: SQL status: COMMIT in 0.008 seconds
+[0m11:06:41.628843 [debug] [MainThread]: On master: Close
+[0m11:06:41.628843 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m11:06:41.628843 [debug] [MainThread]: Connection 'list_oeil_traitement' was properly closed.
+[0m11:06:41.628843 [debug] [MainThread]: Connection 'list_oeil_traitement_processing' was properly closed.
+[0m11:06:41.628843 [debug] [MainThread]: Connection 'model.dbt_bilbo.models_test' was properly closed.
+[0m11:06:41.628843 [info ] [MainThread]: 
+[0m11:06:41.628843 [info ] [MainThread]: Finished running 1 table model in 0 hours 6 minutes and 35.00 seconds (395.00s).
+[0m11:06:41.628843 [debug] [MainThread]: Command end result
+[0m11:06:41.725885 [info ] [MainThread]: 
+[0m11:06:41.725885 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m11:06:41.725885 [info ] [MainThread]: 
+[0m11:06:41.725885 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m11:06:41.741514 [debug] [MainThread]: Command `dbt run` succeeded at 11:06:41.741514 after 395.99 seconds
+[0m11:06:41.741514 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214F7226B90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214F71B7A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000214FC2C9C90>]}
+[0m11:06:41.741514 [debug] [MainThread]: Flushing usage events
