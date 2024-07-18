@@ -1,25 +1,22 @@
--- Création d'une vue matérialisée qui groupe les valeurs selon l'année, l'id_spatial, 
--- le libellé et la classe.
 
---CREATE MATERIALIZED VIEW surfor.mvue_TMF_acc_aveclibelle AS
 
-SELECT 
-    annee, 
+SELECT
+    annee,
     id_spatial,
     upper_libelle,
     level,
-    SUM(values) AS sum_values,
-    classe
-FROM 
+    classe,
+    SUM(values) AS sum_values
+FROM
     surfor."faits_TMF_annualChangeCollection_h3_nc_6"
-GROUP BY 
-    annee, 
+GROUP BY
+    annee,
     id_spatial,
     upper_libelle,
     level,
     classe
 ORDER BY
-    annee, 
+    annee,
     id_spatial,
     upper_libelle,
     level,

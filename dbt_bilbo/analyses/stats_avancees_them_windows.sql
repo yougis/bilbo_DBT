@@ -18,7 +18,7 @@ WITH dtm_alldim AS (
         f.nature,
         SUM(ROUND(CAST(ST_Area(geometry) / 10000 AS numeric), 2)) AS ha
     FROM 
-        processing."faits_GFC_lossyear_h3_nc_6_APP" f
+        processing."faits_GFC_lossyear_h3_nc_6_APP" f 
     GROUP BY 
         CASE
             WHEN ROUND(CAST(f.annee AS numeric)) < 100 THEN ROUND(CAST(f.annee AS numeric)) + 2000

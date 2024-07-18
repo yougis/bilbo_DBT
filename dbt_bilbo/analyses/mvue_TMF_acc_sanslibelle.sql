@@ -1,20 +1,9 @@
--- Création d'une vue matérialisée qui groupe les valeurs selon l'année, l'id_spatial 
--- et la classe.
-
-CREATE MATERIALIZED VIEW surfor.mvue_TMF_acc_sanslibelle AS
-
 SELECT 
-    annee, 
-    id_spatial, 
-    SUM(values) AS sum_values,
-    classe
+    annee
 FROM 
     surfor."faits_TMF_annualChangeCollection_h3_nc_6"
 GROUP BY 
-    annee, 
-    id_spatial,
-    classe
+    annee
+
 ORDER BY
-    annee, 
-    id_spatial,
-    classe;
+    annee;

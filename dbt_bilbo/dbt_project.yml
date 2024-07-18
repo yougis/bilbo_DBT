@@ -30,5 +30,10 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   dbt_bilbo:
-    models_test:
-      +materialized: table
+    +materialized: table
+
+vars:
+  list_temporelle : ["annee"]
+  list_spatiale : ["id_spatial", "upper_libelle", "level"]
+  list_mesure : ["values"]
+  list_technique : ["hex_id", "id_split", "geometry", "id_indicateur", "id_fait", "id", "metadata_id", "nic", "objectid"] 

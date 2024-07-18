@@ -1,0 +1,14 @@
+{{ config(materialized='view') }}
+
+select
+    column_name
+from
+    information_schema.columns
+where
+    table_schema = 'surfor'
+    and table_name = 'faits_tmf_test_table'
+
+
+{{ name_dtm_alldim(schema, table_name) }}  -- Nommer la table avec le préfixe "dtm_alldim" selon le nom de la table de faits
+
+{{ dtm_alldim(schema, table_name) }}  -- Requête SQL qui aggège les données selon plusieurs champs

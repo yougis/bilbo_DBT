@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: faits_GFC_gain_unesco_terre
+        columns:
+          - name: id
+          - name: annee
+          - name: id_spatial
+          - name: classe
+          - name: nom_zone
+          - name: upper_libelle
+          - name: level
+          - name: geometry
+          - name: id_split
+          - name: metadata_id

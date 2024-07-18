@@ -1,0 +1,45 @@
+{% set schema = 'oeil_traitement-surfor' %}
+{% set table_name = 'faits_tmf_test_table' %}
+
+{{ get_columns(schema, table_name) }}
+{{ filter_columns(columns) }}
+
+{% set filtered_columns = columns_to_include | select('==', 'id_spatial') %}
+{% set formatted_columns = filter_columns(filtered_columns) %}
+
+SELECT {{ formatted_columns }}
+
+---
+
+{% macro get_columns(schema, table_name) %}
+
+    {% set columns_to_include = [] %}
+    {% for column in source(schema, table_name)['columns'] %}
+        {% if column['name'] != 'xxx' %}
+            {% set columns_to_include = columns_to_include + [column['name']] %}
+        {% endif %}
+    {% endfor %}
+
+{% endmacro %}
+
+---
+
+{% macro filter_columns(columns) %}
+
+    {{ columns | join(', ') }}
+    
+{% endmacro %}
+
+----
+
+{% macro get_columns(schema, table_name) %}
+
+    select
+        lower(column_name) as column_name
+    from
+        information_schema.columns
+    where
+        table_schema = '{{ schema }}'
+        and table_name = '{{ table_name }}'
+
+{% endmacro %}

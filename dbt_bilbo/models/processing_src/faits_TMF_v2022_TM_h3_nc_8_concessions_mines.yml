@@ -1,0 +1,18 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: faits_TMF_v2022_TM_h3_nc_8_concessions_mines
+        columns:
+          - name: id
+          - name: upper_libelle
+          - name: groupe
+          - name: level
+          - name: titre_mini
+          - name: id_spatial
+          - name: classe
+          - name: geometry
+          - name: id_split
+          - name: metadata_id

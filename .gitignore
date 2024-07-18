@@ -1,5 +1,7 @@
 
 */target/
 */dbt_packages/
+
 *.log
 .vscode/
+logs/*
