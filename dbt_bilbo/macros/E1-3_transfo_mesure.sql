@@ -7,8 +7,6 @@
 
     {% endfor %}
     
-
-    
     {% if 'geometry' in columns %}
 
         ,SUM(

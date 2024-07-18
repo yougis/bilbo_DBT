@@ -120,7 +120,6 @@ def create_source_yml_files(fdf):
                     fp.write('    schema: '+scrow+'\n')      
                     fp.write('    tables: \n')                   
                     fp.write('      - name: '+obrow+'\n')
-                     
                     fp.write('        columns:\n')
                     for coli,colrow in fdf[(fdf['schema'] ==scrow) & (fdf['object_name'] ==obrow) & (fdf['object_type'] ==obtrow)].iterrows() :
                         print(colrow['schema']+'---'+colrow['object_name']+'---'+colrow['column_name']+'---'+colrow['data_type']+'---'+colrow['mandatory']) 
