@@ -1,6 +1,8 @@
-{% macro generate_select(list_ordered) %}
-    {% for column in list_ordered %}
+{% macro generate_select(list_select) %}
+
+    {% for column in list_select %}
         {{ column }}
         {% if not loop.last %},{% endif %}
     {% endfor %}
+    
 {% endmacro %}

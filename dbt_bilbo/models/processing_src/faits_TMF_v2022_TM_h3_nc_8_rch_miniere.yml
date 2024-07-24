@@ -7,13 +7,13 @@ sources:
       - name: faits_TMF_v2022_TM_h3_nc_8_rch_miniere
         columns:
           - name: id
-          - name: date_insti
           - name: level
-          - name: classe
-          - name: groupe
-          - name: id_spatial
           - name: upper_libelle
           - name: titre_mini
+          - name: groupe
+          - name: id_spatial
+          - name: classe
+          - name: date_insti
           - name: numero
           - name: geometry
           - name: id_split

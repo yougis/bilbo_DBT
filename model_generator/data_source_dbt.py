@@ -1,7 +1,3 @@
-#This piece of code will create the yml and sql files needed in a postgresql dbt project
-#from the postgres DB. It's reversing engineering the files so they don't need to be 
-#created manually.
-from oeilnc_config.settings import usr, pswd, host, port, db_traitement
 import os
 import psycopg2 
 import pandas as pd
@@ -10,6 +6,15 @@ from pathlib import Path
 
 from datetime import date, datetime, timedelta
 from timeit import default_timer as timer 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+usr = os.getenv("DB_USER")
+pswd = os.getenv("DB_PWD")
+host = os.getenv("DB_HOST")
+port = os.getenv("DB_PORT")
+db_traitement = os.getenv("DB_WORKSPACE")
 
 # Database Server details
 sql_host = host
@@ -18,11 +23,11 @@ sql_password = pswd
 sql_db = db_traitement
  
 # Directories 
-models_dir = Path('./models')
-source_schemas = ['processing']
+models_dir = Path('./dbt_bilbo/models')
+source_schemas = ['feux']
 
 # filtrer les tables par les nom
-start_with = 'faits_'
+start_with = 'faits_zones_brulees'
 not_end_with = 'withError'
 
 #dates
@@ -32,7 +37,6 @@ now = datetime.now()
 global connpg
 
 def sql_to_df(sql_query, column_names):
-
     curpg = connpg.cursor() 
     try:
       curpg.execute(sql_query)
@@ -51,7 +55,6 @@ def sql_to_df(sql_query, column_names):
     return df
 
 def get_metadata(): 
-    
     sql_postgres = "select pg_namespace.nspname as schema,\
                     pg_class.relname as object_name, \
                     case when pg_class.relkind in ('v','m') then 'view'\
@@ -88,15 +91,16 @@ def get_metadata():
     return pg_md
 
 def create_schema_dirs(df):
+    # create the parent directory if it doesn't exist
+    models_dir.mkdir(parents=True, exist_ok=True)
+    
     #This will create each schema directory under models dir. 
     print(df)
     for sch in df:
         try:
             path = Path(models_dir/str(sch+'_src'))
-            print(path)
-            os.mkdir(path) 
-        except FileExistsError:
-             pass 
+            print(f"Creating directory: {path.resolve()}")
+            path.mkdir(parents=True, exist_ok=True)
         except Exception as e:
             print(str(e))
             return 1
@@ -106,7 +110,7 @@ def create_source_yml_files(fdf):
     #This will create the different YML  files for each object
     for scrow in fdf.schema.unique():
         npath = Path(models_dir/str(scrow+'_src'))
-        print(npath)
+        print(f"Creating YML files in: {npath.resolve()}")
         for obrow in (fdf[fdf['schema'] ==scrow].object_name).unique():
             print('---object name: '+obrow)
             for obtrow in (fdf[(fdf['schema'] ==scrow) & (fdf['object_name'] ==obrow)].object_type).unique():
@@ -129,22 +133,29 @@ def create_source_model_files(fdf):
     #This will create the different SQL files for each object
     for scrow in fdf.schema.unique():
         npath = Path(models_dir/str(scrow+'_src'))
-        print(npath)
+        print(f"Creating SQL files in: {npath.resolve()}")
         for obrow in (fdf[fdf['schema'] ==scrow].object_name).unique():
             print('---object name: '+obrow)
             for obtrow in (fdf[(fdf['schema'] ==scrow) & (fdf['object_name'] ==obrow)].object_type).unique():
+                cols = fdf[(fdf['schema'] == scrow) & (fdf['object_name'] == obrow)]['column_name'].unique()
                 print('     ---object type:'+obtrow)
                 filename = obrow+'.sql'
-                with open( Path(npath/filename), 'w') as fp:
-                    fp.write('with source_data as (\n')
-                    fp.write('      select * \n')
-                    fp.write('      from {{ source(\''+sql_db+'-'+scrow+'\',\''+obrow+'\') }} \n')
-                    fp.write(')\n')
-                    fp.write('\n')
-                    fp.write('select *\n')      
-                    fp.write('from source_data \n') 
-  
-          
+                with open(Path(npath/filename), 'w') as fp:
+                    if 'annee' in cols or 'Annee' in cols:
+                        fp.write("{% set schema = '" + sql_db + '-' + scrow + "' %}\n")
+                        fp.write("{% set table_name = '" + obrow + "' %}\n")
+                        fp.write("\n")
+                        fp.write("{% set granu_tempo = 'annee' %}\n")
+                        fp.write("\n")
+                        fp.write("{{ agreg_annee_type_spatial(schema, table_name, granu_tempo) }}\n")
+                        fp.write("\n")
+                    else:
+                        fp.write("{% set schema = '" + sql_db + '-' + scrow + "' %}\n")
+                        fp.write("{% set table_name = '" + obrow + "' %}\n")
+                        fp.write("\n")
+                        fp.write("{{ agreg_type_spatial(schema, table_name) }}\n")
+                        fp.write("\n")
+      
 if __name__ == "__main__":
     #create db connection
     connpg = psycopg2.connect(database=sql_db, user = sql_user, password = sql_password , host = sql_host, port = "5432") 
@@ -159,4 +170,4 @@ if __name__ == "__main__":
         create_source_yml_files(pg_md[(pg_md['schema'].isin(source_schemas))])
         #This will create the sql files referencing the sources:
         create_source_model_files(pg_md[(pg_md['schema'].isin(source_schemas))])
-        
+

@@ -1,7 +1,7 @@
-with source_data as (
-      select * 
-      from {{ source('oeil_traitement-processing','faits_TMF_acc_APP') }} 
-)
+{% set schema = 'oeil_traitement-processing' %}
+{% set table_name = 'faits_TMF_acc_APP' %}
 
-select *
-from source_data 
+{% set granu_tempo = 'annee' %}
+
+{{ agreg_annee_level(schema, table_name, granu_tempo) }}
+

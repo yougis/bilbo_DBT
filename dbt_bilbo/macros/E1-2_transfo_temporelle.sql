@@ -1,10 +1,12 @@
 {% macro transfo_temporelle(dim_temporelle) %}
 
     {% for column in dim_temporelle %}
+
         CASE 
-            WHEN {{ column }}::FLOAT < 100 THEN ({{ column }}::FLOAT + 2000)::INTEGER
-            ELSE {{ column }}::INTEGER
-        END AS {{ column }},
+            WHEN CAST({{ column }} AS FLOAT) < 100 THEN CAST((CAST({{ column }} AS FLOAT) + 2000) AS INT)
+            ELSE CAST(CAST({{ column }} AS FLOAT) AS INT)
+        END AS annee ,
+        
     {% endfor %}
 
 {% endmacro %}
