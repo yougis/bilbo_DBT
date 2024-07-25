@@ -1,7 +1,9 @@
+-- CREATE TABLE public.test_zb_geometry AS
+
 WITH intersected_areas AS (
     SELECT
-        a1.annee AS annee_a,
-        a2.annee AS annee_b,
+        a1.annee AS annee_A,
+        a2.annee AS annee_B,
         ST_CollectionExtract(ST_Intersection(a1.geometry, a2.geometry), 3) AS intersection_geometry,
         ST_Area(ST_CollectionExtract(ST_Intersection(a1.geometry, a2.geometry), 3)) AS intersection_area
     FROM
@@ -16,8 +18,8 @@ WITH intersected_areas AS (
         AND a2.type_spatial = 'province'
 )
 SELECT
-    annee_a,
-    annee_b,
+    annee_A,
+    annee_B,
     'NOUVELLE-CALEDONIE' AS upper_libelle,
     ROUND(CAST(SUM(intersection_area) / 10000.0 AS numeric), 2) AS superficie_ha,
     ST_Union(intersection_geometry) AS intersection_geometry
@@ -26,7 +28,6 @@ FROM
 WHERE
     ST_GeometryType(intersection_geometry) IN ('ST_Polygon', 'ST_MultiPolygon')
 GROUP BY
-    annee_a, annee_b
+    annee_A, annee_B
 ORDER BY
-    annee_a, annee_b;
-
+    annee_A, annee_B;

@@ -47,9 +47,9 @@ intersected_areas AS (
         AND a2.type_spatial = 'commune'
 )
 SELECT
-    c.commune AS level,
     c.annee_A,
     c.annee_B,
+    c.commune AS upper_libelle,
     COALESCE(ROUND(CAST(SUM(ia.intersection_area) / 10000.0 AS numeric), 2), 0.00) AS superficie_ha
 FROM
     commune_year_combinations c
@@ -62,4 +62,4 @@ ON
 GROUP BY
     c.commune, c.annee_A, c.annee_B
 ORDER BY
-    c.commune, c.annee_A, c.annee_B;
+    c.annee_A, c.annee_B, c.commune;

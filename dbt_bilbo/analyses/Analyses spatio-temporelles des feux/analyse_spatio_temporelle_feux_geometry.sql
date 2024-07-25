@@ -1,4 +1,4 @@
-CREATE TABLE feux.inters_zb_mos_veg_2008 AS
+-- CREATE TABLE feux.inters_zb_mos_veg_2008 AS
 
 WITH intersected_areas AS (
     SELECT
