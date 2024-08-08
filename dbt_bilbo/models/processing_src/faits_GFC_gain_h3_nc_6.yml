@@ -8,7 +8,7 @@ sources:
         columns:
           - name: hex_id
           - name: classe
-          - name: Annee
+          - name: annee
           - name: id_split
           - name: id_spatial
           - name: level

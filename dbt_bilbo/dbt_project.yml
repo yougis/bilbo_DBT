@@ -1,6 +1,4 @@
-# Name your project! Project names should contain only lowercase characters
-# and underscores. A good package name should reflect your organization's
-# name or the intended use of these models
+# Name your project!
 name: 'dbt_bilbo'
 version: '1.0.0'
 
@@ -21,13 +19,7 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
 # Configuring models
-# Full documentation: https://docs.getdbt.com/docs/configuring-models
-
-# In this example config, we tell dbt to build all models in the example/
-# directory as views. These settings can be overridden in the individual model
-# files using the `{{ config(...) }}` macro.
 models:
   dbt_bilbo:
     +materialized: table
@@ -36,5 +28,18 @@ vars:
   list_temporelle : ["annee"]
   list_spatiale : ["id_spatial", "upper_libelle", "level", "dimension_spatiale", "type_spatial"]
   list_mesure : []
-  list_technique : ["values","hex_id", "id_split", "geometry", "id_indicateur", "id_fait", "id", "metadata_id", "nic", "objectid"]
+  list_technique : ["hex_id", "id_split", "geometry", "id_indicateur", "id_fait", "id", "metadata_id", "nic", "objectid", "values"]
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   list_tech : ["geometry", "id", "zone_id", "id_split", "id_indicateur", "id_fait", "id_thematique", "zb_id", "index_right", "globalid", "grid_code", "unesco_id", "values", "ratio", "ratio_id_spatial", "superficie_ha", "distance", "perimetre", "premiere_detection", "derniere_detection", "date_acq", "date_ortho", "created"]

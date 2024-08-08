@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: oeil_traitement_processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: dtm_zones_brulees_foncier_annee_level

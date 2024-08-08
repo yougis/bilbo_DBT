@@ -1,0 +1,78 @@
+-- Créer un index spatial sur la colonne geometry
+--CREATE INDEX IF NOT EXISTS idx_geometry_spatial ON feux.faits_zones_brulees_microendemisme_index USING GIST (geometry);
+
+{% set granu_spatiale = 'province' %}
+
+{% set years = [2017, 2018, 2019, 2020, 2021] %}
+{% set initial_year = years[0] %}
+
+
+-- Initialisation de la première union
+WITH initial_union AS (
+    SELECT
+        dimension_spatiale,
+        type_spatial,
+        ST_Union(geometry) AS union_geom
+    FROM
+        feux.faits_zones_brulees_microendemisme_index
+    WHERE
+        (annee = {{ years[0] }} AND type_spatial = '{{ granu_spatiale }}')
+        OR (annee = {{ years[1] }} AND type_spatial = '{{ granu_spatiale }}')
+    GROUP BY
+        dimension_spatiale, type_spatial
+)
+
+{% for year in years[2:] %}
+, union_up_to_{{ year }} AS (
+    SELECT
+        dimension_spatiale,
+        type_spatial,
+        ST_Union(geometry) AS union_geom
+    FROM
+        feux.faits_zones_brulees_microendemisme_index
+    WHERE
+        annee < {{ year }}
+    GROUP BY
+        dimension_spatiale, type_spatial
+)
+
+, intersect_{{ year }} AS (
+    SELECT
+        f.dimension_spatiale,
+        f.type_spatial,
+        {{ year }} AS annee,
+        ST_Intersection(u.union_geom, f.geometry) AS intersection_geometry
+    FROM
+        union_up_to_{{ year }} u
+    JOIN
+        feux.faits_zones_brulees_microendemisme_index f
+    ON
+        f.annee = {{ year }}
+        AND f.type_spatial = '{{ granu_spatiale }}'
+        AND f.dimension_spatiale = u.dimension_spatiale
+        AND f.type_spatial = u.type_spatial
+        AND ST_Intersects(u.union_geom, f.geometry) -- Utilisation de l'index spatial
+)
+{% endfor %}
+
+SELECT
+    {{ initial_year }} AS annee_1,
+    annee AS annee_2,
+    type_spatial,
+    dimension_spatiale,
+    ROUND(CAST(SUM(ST_Area(intersection_geometry)) / 10000.0 AS numeric), 2) AS superficie_ha
+FROM (
+    {% for year in years[2:] %}
+    SELECT * FROM intersect_{{ year }}
+    {% if not loop.last %} UNION ALL {% endif %}
+    {% endfor %}
+) AS all_intersections
+WHERE
+    ST_GeometryType(intersection_geometry) IN ('ST_Polygon', 'ST_MultiPolygon')
+GROUP BY
+    annee, type_spatial, dimension_spatiale
+ORDER BY
+    annee, type_spatial, dimension_spatiale
+
+
+

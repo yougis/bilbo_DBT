@@ -24,10 +24,10 @@ sql_db = db_traitement
  
 # Directories 
 models_dir = Path('./dbt_bilbo/models')
-source_schemas = ['feux']
+source_schemas = ['processing']
 
 # filtrer les tables par les nom
-start_with = 'faits_zones_brulees'
+start_with = 'faits_'
 not_end_with = 'withError'
 
 #dates
@@ -147,13 +147,12 @@ def create_source_model_files(fdf):
                         fp.write("\n")
                         fp.write("{% set granu_tempo = 'annee' %}\n")
                         fp.write("\n")
-                        fp.write("{{ agreg_annee_type_spatial(schema, table_name, granu_tempo) }}\n")
-                        fp.write("\n")
+                        fp.write("{{ agreg_annee_level(schema, table_name) }}\n")
                     else:
                         fp.write("{% set schema = '" + sql_db + '-' + scrow + "' %}\n")
                         fp.write("{% set table_name = '" + obrow + "' %}\n")
                         fp.write("\n")
-                        fp.write("{{ agreg_type_spatial(schema, table_name) }}\n")
+                        fp.write("{{ agreg_level(schema, table_name) }}\n")
                         fp.write("\n")
       
 if __name__ == "__main__":

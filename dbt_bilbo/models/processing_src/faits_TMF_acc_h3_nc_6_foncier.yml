@@ -4,15 +4,15 @@ sources:
     database: oeil_traitement
     schema: processing
     tables: 
-      - name: faits_GFC_lossyear_h3_nc_6
+      - name: faits_TMF_acc_h3_nc_6_foncier
         columns:
-          - name: hex_id
+          - name: nic
           - name: annee
-          - name: id_split
-          - name: id_spatial
-          - name: level
           - name: upper_libelle
+          - name: level
+          - name: classe
+          - name: id_spatial
+          - name: proprio_na
           - name: geometry
-          - name: values
+          - name: id_split
           - name: metadata_id
-          - name: id_indicateur

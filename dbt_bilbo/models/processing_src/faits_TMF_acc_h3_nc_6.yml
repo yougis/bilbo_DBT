@@ -4,9 +4,10 @@ sources:
     database: oeil_traitement
     schema: processing
     tables: 
-      - name: faits_GFC_lossyear_h3_nc_6
+      - name: faits_TMF_acc_h3_nc_6
         columns:
           - name: hex_id
+          - name: classe
           - name: annee
           - name: id_split
           - name: id_spatial

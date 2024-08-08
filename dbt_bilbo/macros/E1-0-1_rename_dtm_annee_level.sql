@@ -7,3 +7,4 @@
     {{ config(materialized='table', alias=alias) }}
     
 {% endmacro %}
+

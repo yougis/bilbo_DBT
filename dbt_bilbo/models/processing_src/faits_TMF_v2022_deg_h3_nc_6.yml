@@ -7,7 +7,7 @@ sources:
       - name: faits_TMF_v2022_deg_h3_nc_6
         columns:
           - name: hex_id
-          - name: Annee
+          - name: annee
           - name: id_split
           - name: id_spatial
           - name: level
