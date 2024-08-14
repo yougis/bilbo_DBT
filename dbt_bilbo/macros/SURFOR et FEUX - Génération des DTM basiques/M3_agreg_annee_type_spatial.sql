@@ -53,7 +53,10 @@
         SELECT
             {{ transfo_temporelle(dim_temporelle) }}
             {{ generate_select(list_select)}},
-            {{ transfo_mesure(list_ordered_avec_technique, dim_mesure, mcolumn) }}
+            {{ transfo_mesure(list_ordered_avec_technique, dim_mesure, mcolumn) }},
+            COUNT(DISTINCT id_thematique) AS nb_theme_indic,
+            COUNT(DISTINCT zb_id) AS nb_indic
+
 
         FROM
             {{ source(schema, table_name) }}
@@ -113,6 +116,9 @@
         ,
             t.{{ column }}
         {% endfor %}
+        ,
+        t.nb_theme_indic,
+        t.nb_indic
 
     FROM
         all_year_level_combinations c

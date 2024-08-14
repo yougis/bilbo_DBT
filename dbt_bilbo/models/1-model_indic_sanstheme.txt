@@ -1,0 +1,5 @@
+{% set theme = 'corridor_moyenne_distance_fs' %}
+
+{{ rename_dtm_indic_sanstheme(theme) }}
+
+{{ indic_sanstheme(theme) }}

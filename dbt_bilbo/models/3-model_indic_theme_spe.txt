@@ -1,0 +1,6 @@
+{% set theme = 'unesco' %}
+{% set champ_theme = 'nom_zone' %}
+
+{{ rename_dtm_indic_theme_spe(theme) }}
+
+{{ indic_theme_spe(theme, champ_theme) }}

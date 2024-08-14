@@ -13,7 +13,7 @@
         {%- endif %}
 
         {%- if 'geometry' in column -%}
-            ,SUM(
+            SUM(
                 CASE
                     WHEN ST_GeometryType({{ column }}) = 'ST_Polygon' OR ST_GeometryType({{ column }}) = 'ST_MultiPolygon' THEN
                         ROUND(CAST(ST_Area({{ column }}) / 10000 AS numeric), 2)

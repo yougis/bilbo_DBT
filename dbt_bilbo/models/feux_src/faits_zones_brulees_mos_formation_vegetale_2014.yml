@@ -1,0 +1,24 @@
+version: 2
+sources:
+  - name: oeil_traitement-feux
+    database: oeil_traitement
+    schema: feux
+    tables: 
+      - name: faits_zones_brulees_mos_formation_vegetale_2014
+        columns:
+          - name: id_thematique
+          - name: c_2014_n3
+          - name: l_2014_n3
+          - name: premiere_detection
+          - name: derniere_detection
+          - name: annee
+          - name: zb_id
+          - name: id_split
+          - name: id_spatial
+          - name: type_spatial
+          - name: dimension_spatiale
+          - name: geometry
+          - name: values
+          - name: classe
+          - name: id_indicateur
+          - name: id_fait

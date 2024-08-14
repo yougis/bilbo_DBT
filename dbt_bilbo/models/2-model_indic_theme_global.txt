@@ -1,0 +1,5 @@
+{% set theme = 'especes_sensibles_province_sud' %}
+
+{{ rename_dtm_indic_theme_global(theme) }}
+
+{{ indic_theme_global(theme) }}

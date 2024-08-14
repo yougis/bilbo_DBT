@@ -1,0 +1,24 @@
+version: 2
+sources:
+  - name: oeil_traitement-processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: dtm_zones_brulees_unesco_annee_level
+        columns:
+          - name: annee
+          - name: id_spatial
+          - name: upper_libelle
+          - name: level
+          - name: kba
+          - name: classe
+          - name: superficie_ha
+          - name: nb_theme_indic
+          - name: nb_indic
+      - name: admin_unesco
+
+  - name: oeil_traitement-contexte
+    database: oeil_traitement
+    schema: contexte
+    tables: 
+      - name: admin_kba

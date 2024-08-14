@@ -1,0 +1,15 @@
+CREATE TABLE processing.admin_unesco AS
+
+SELECT
+    unesco_id AS id_thematique,
+    nom_zone,
+    id_split,
+    id_spatial,
+    type_spatial,
+    dimension_spatiale,
+    geometry,
+    values, 
+    id_indicateur,
+    id_fait
+
+FROM contexte.admin_unesco;

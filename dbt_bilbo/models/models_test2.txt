@@ -1,0 +1,20 @@
+version: 1
+sources:
+  - name: oeil_traitement_carto
+    database: oeil_traitement
+    schema: carto
+    tables: 
+      - name: dim_date
+      - name: dim_spatial
+
+  - name: oeil_traitement_processing
+    database: oeil_traitement
+    schema: processing
+    tables: 
+      - name: dim_spatial_superficie
+
+  - name: oeil_traitement_contexte
+    database: oeil_traitement
+    schema: contexte
+    tables: 
+      - name: admin_foncier
