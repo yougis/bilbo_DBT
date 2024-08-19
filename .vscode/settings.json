@@ -8,6 +8,16 @@
             "name": "data_oeil",
             "database": "oeil_traitement",
             "username": "dbt_bilbo"
+        },
+        {
+            "previewLimit": 50,
+            "server": "172.20.12.13",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "data_postgres",
+            "database": "oeil_traitement",
+            "username": "postgres",
+            "password": "oeil"
         }
     ]
 }
