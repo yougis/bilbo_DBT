@@ -141,7 +141,7 @@ def create_source_model_files(fdf):
                 print('     ---object type:'+obtrow)
                 filename = obrow+'.sql'
                 with open(Path(npath/filename), 'w') as fp:
-                    if 'annee' in cols or 'Annee' in cols :
+                    if 'annee' in cols :
                         fp.write("{% set schema = '" + sql_db + '-' + scrow + "' %}\n")
                         fp.write("{% set table_name = '" + obrow + "' %}\n")
                         fp.write("\n")
